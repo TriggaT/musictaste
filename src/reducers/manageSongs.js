@@ -4,3 +4,5 @@ const manageSongs = (state, action) => {
             return state;
     }
 }
+
+export default manageSongs
