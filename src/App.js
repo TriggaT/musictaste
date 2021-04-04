@@ -1,6 +1,10 @@
 import React, {Component} from "react"
 import {BrowserRouter as Router, Route} from 'react-router-dom';
+import ErrorPage from "./components/ErrorPage";
+import Home from "./components/Home";
 import NavBar from './components/NavBar'
+import SongForm from "./components/SongForm";
+import Songs from "./components/Songs";
 
 class App extends Component {
   render(){
@@ -9,6 +13,10 @@ class App extends Component {
         <h1>MusicTaste</h1>
         <Router>
           <NavBar/>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/songs" component={Songs}/>
+          <Route exact path="/songs/new" component={SongForm}/>
+          <Route component={ErrorPage}/>
         </Router>
         
       </div>
