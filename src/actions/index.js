@@ -10,7 +10,7 @@ export const getSongs = () => {
     }
 }
 
-export const addSong = (song) => {
+export const addSong = (song, history) => {
     const songData = {
         title: song.title, 
         artist: song.artist
@@ -26,8 +26,9 @@ export const addSong = (song) => {
             body: JSON.stringify(songData)
         })
         .then(r => r.json())
-        .then(song => 
+        .then(song => {
             dispatch({type: 'ADD_SONG', song})
-        )
+            history.push("/songs")
+        })
     }
 }
