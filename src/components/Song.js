@@ -5,7 +5,7 @@ export class Song extends Component {
         const { song } = this.props;
         return (
             <>
-            <li key={song.id}>
+            <li>
                 <strong>Title:</strong> {song.title} <br /> 
                 <strong>Artist:</strong> {song.artist}
             </li> <br /> 
