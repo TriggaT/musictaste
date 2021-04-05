@@ -21,9 +21,9 @@ class SongForm extends Component {
             <div>
                 <form>
                     <label htmlFor="title">Title:</label>
-                    <input name="title" type="text" value={this.state.title} /><br /> 
+                    <input name="title" type="text" value={this.state.title} onChange={this.handleChange}/><br /> 
                     <label htmlFor="artist">Artist:</label>
-                    <input name="title" type="text" value={this.state.title} /><br />
+                    <input name="artist" type="text" value={this.state.artist} onChange={this.handleChange}/><br />
                     <input type="submit" value="Add Song" />
                 </form>
             </div>
