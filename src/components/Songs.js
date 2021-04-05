@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom';
 import {connect} from 'react-redux'
+import {getSongs} from '../actions/index'
 
 class Songs extends Component {
     componentDidMount = () => {
@@ -21,11 +22,11 @@ class Songs extends Component {
                         </li>)} 
                 </ol>
 
-                
+                <NavLink to="/songs/new">Add New Song</NavLink>
                 
             </div>
         )
     }
 }
 
-export default connect((state) => ({songs: state.songs}))(Songs)
+export default connect((state) => ({songs: state.songs}), {getSongs})(Songs)
