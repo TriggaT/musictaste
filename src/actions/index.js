@@ -16,6 +16,11 @@ export const getSongs = () => {
 }
 
 export const postSong = (song) => {
+    const songData = {
+        title: song.title, 
+        artist: song.artist
+    }
+    
     return dispatch => {
         fetch("/songs", {
             method: "POST", 
@@ -23,7 +28,7 @@ export const postSong = (song) => {
                 "Accept": "application/json",
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({song})
+            body: JSON.stringify(songData)
         })
         .then(r => r.json())
         .then(song => console.log(song))

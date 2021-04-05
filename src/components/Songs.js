@@ -5,7 +5,7 @@ import {getSongs} from '../actions/index'
 
 class Songs extends Component {
     componentDidMount = () => {
-        console.log(this.props.getSongs())
+        this.props.getSongs()
     }
 
 
