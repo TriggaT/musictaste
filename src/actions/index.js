@@ -13,7 +13,8 @@ export const getSongs = () => {
 export const addSong = (song, history) => {
     const songData = {
         title: song.title, 
-        artist: song.artist
+        artist: song.artist,
+        playlistId: song.playlistId
     }
     
     return dispatch => {
