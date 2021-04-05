@@ -15,7 +15,7 @@ export const getSongs = () => {
     }
 }
 
-export const postSong = (song) => {
+export const addSong = (song) => {
     const songData = {
         title: song.title, 
         artist: song.artist
@@ -31,6 +31,8 @@ export const postSong = (song) => {
             body: JSON.stringify(songData)
         })
         .then(r => r.json())
-        .then(song => console.log(song))
+        .then(song => 
+            dispatch({type: 'ADD_SONG', song})
+        )
     }
 }
