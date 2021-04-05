@@ -1,8 +1,3 @@
-export const addSong = (title, artist) => ({
-    type: "ADD_SONG",
-    title,
-    artist
-})
 
 export const getSongs = () => {
     return dispatch => {

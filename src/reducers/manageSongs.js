@@ -11,11 +11,8 @@ const manageSongs = (state = {songs: [], loading: true}, action) => {
             songs: action.songs,
             loading: false }
         case "ADD_SONG":
-            const song = {
-                title: action.title,
-                artist: action.artist}
             return {...state,
-            songs: [...state.songs, song]}
+            songs: [...state.songs, action.song]}
         default:
             return state;
     }
