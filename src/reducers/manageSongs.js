@@ -11,10 +11,13 @@ const manageSongs = (state = {songs: [], loading: true}, action) => {
                 title: action.title,
                 artist: action.artist
             }
-
             return {...state,
             songs: [...state.songs, song]
             }
+        case "SET_SONGS":
+            return {...state,
+            songs: action.songs,
+            loading: false }
         default:
             return state;
     }

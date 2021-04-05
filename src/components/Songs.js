@@ -11,6 +11,15 @@ class Songs extends Component {
 
 
     render() {
+        if (this.props.loading){
+            return (
+                <>
+                <h3>Songs</h3>
+                <h4>Loading...</h4>
+                </>
+
+            )
+        }
         return (
             <div>
                 <h3>Songs</h3>

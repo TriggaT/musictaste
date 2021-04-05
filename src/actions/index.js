@@ -9,7 +9,9 @@ export const getSongs = () => {
         dispatch({ type: 'LOADING_SONGS'})
         fetch("/songs")
         .then(r => r.json())
-        .then(songs => console.log(songs))
+        .then(songs => {
+            dispatch({type: 'SET_SONGS', songs})}
+        )
         
     }
 
