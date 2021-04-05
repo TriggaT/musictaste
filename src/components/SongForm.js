@@ -11,6 +11,10 @@ class SongForm extends Component {
         this.setState({
             [e.target.name]: e.target.value 
         })
+    }
+
+    handleSubmit = e => {
+        e.preventDefault()
         console.log(this.state)
 
     }
@@ -19,7 +23,7 @@ class SongForm extends Component {
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <label htmlFor="title">Title:</label>
                     <input name="title" type="text" value={this.state.title} onChange={this.handleChange}/><br /> 
                     <label htmlFor="artist">Artist:</label>
