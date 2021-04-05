@@ -23,8 +23,7 @@ class SongForm extends Component {
             artist: ""
         })
     }
-
-
+    
     render() {
         return (
             <div>

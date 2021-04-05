@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom';
 import {connect} from 'react-redux'
 import {getSongs} from '../actions/index'
+import Song from "./Song"
 
 class Songs extends Component {
     componentDidMount = () => {
@@ -25,10 +26,7 @@ class Songs extends Component {
                 <h3>Songs</h3>
                 <ol>
                     {this.props.songs.map(song => 
-                        <li key={song.id}>
-                            <strong>Title:</strong> {song.title} <br /> 
-                            <strong>Artist:</strong> {song.artist}
-                        </li>)} 
+                        <Song song={song} />  )} 
                 </ol>
 
                 <NavLink to="/songs/new">Add New Song</NavLink>
