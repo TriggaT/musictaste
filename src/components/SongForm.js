@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import {addSong} from '../actions/index'
+import {connect} from 'react-redux'
 
 class SongForm extends Component {
 
@@ -16,6 +18,7 @@ class SongForm extends Component {
     handleSubmit = e => {
         e.preventDefault()
         console.log(this.state)
+        
 
     }
 
@@ -35,4 +38,4 @@ class SongForm extends Component {
     }
 }
 
-export default SongForm
+export default connect(null, {addSong})(SongForm)
