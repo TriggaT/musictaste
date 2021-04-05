@@ -1,4 +1,7 @@
-const manageSongs = (state = [], action) => {
+
+
+
+const manageSongs = (state = {songs: []}, action) => {
     switch(action.type) {
         case "ADD_SONG":
             const song = {
@@ -7,8 +10,8 @@ const manageSongs = (state = [], action) => {
             }
 
             return {...state,
-            song
-        }
+            songs: [...state.songs, song]
+            }
         default:
             return state;
     }
