@@ -1,8 +1,11 @@
 
 
 
-const manageSongs = (state = {songs: []}, action) => {
+const manageSongs = (state = {songs: [], loading: true}, action) => {
     switch(action.type) {
+        case 'LOADING_SONGS':
+            return {...state, 
+            loading: true }
         case "ADD_SONG":
             const song = {
                 title: action.title,
