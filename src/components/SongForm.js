@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 
 class SongForm extends Component {
+
+    state = {
+        title: "",
+        artist: ""
+    }
+
+    
     render() {
         return (
             <div>
