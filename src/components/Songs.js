@@ -16,7 +16,7 @@ class Songs extends Component {
                 <h3>Songs</h3>
                 <ol>
                     {this.props.songs.map(song => 
-                        <li key={song.title}>
+                        <li key={song.id}>
                             <strong>Title:</strong> {song.title} <br /> 
                             <strong>Artist:</strong> {song.artist}
                         </li>)} 
@@ -29,4 +29,11 @@ class Songs extends Component {
     }
 }
 
-export default connect((state) => ({songs: state.songs}), {getSongs})(Songs)
+const mapStateToProps = (state) => {
+    return {
+        songs: state.songs,
+        loading: state.loading
+    }
+}
+
+export default connect(mapStateToProps, {getSongs})(Songs)
