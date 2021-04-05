@@ -21,7 +21,7 @@ class Songs extends Component {
                         </li>)} 
                 </ol>
 
-                <NavLink to="/songs/new">Add New Song</NavLink>
+                
                 
             </div>
         )
