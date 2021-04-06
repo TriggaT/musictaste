@@ -18,6 +18,7 @@ export class PlaylistsContainer extends Component {
                 
              
                 <ListPlaylists playlists={this.props.playlists} /> 
+                <br /> 
 
                 <NavLink  to="/playlists/new">New Playlist</NavLink>
                 <Switch>

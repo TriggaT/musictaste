@@ -16,7 +16,7 @@ class ListPlaylists extends Component {
                 <h3>Playlists</h3>
     
                 {this.props.playlists.map(playlist => 
-                   <li><NavLink key={playlist.id} to={`/playlists/${playlist.id}`}>{playlist.name}</NavLink></li>)
+                   <span><NavLink key={playlist.id} to={`/playlists/${playlist.id}`}>{playlist.name}</NavLink></span>)
                 } 
                 
                 <br /> 
