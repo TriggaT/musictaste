@@ -41,7 +41,6 @@ export const getSongs = () => {
         .then(songs => {
             dispatch({type: 'SET_SONGS', songs})}
         )
-        
     }
 }
 
@@ -54,8 +53,6 @@ export const addSong = (song, id, history) => {
         playlist_id: id
     }
 
-    
-    
     return dispatch => {
         fetch("/songs", {
             method: "POST", 
