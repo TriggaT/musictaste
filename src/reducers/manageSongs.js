@@ -50,6 +50,8 @@ function manageSongs(state = [], action){
 
 function manageReviews(state = [], action){
     switch(action.type) {
+        case "GET_REVIEWS":
+            return state = action.reviews
         default:
             return state;
     }
