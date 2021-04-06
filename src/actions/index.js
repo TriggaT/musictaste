@@ -54,22 +54,22 @@ export const addSong = (song, id, history) => {
         playlist_id: id
     }
 
-    console.log(songData)
     
-    // return dispatch => {
-    //     fetch("/songs", {
-    //         method: "POST", 
-    //         headers: {
-    //             "Accept": "application/json",
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify(songData)
-    //     })
-    //     .then(r => r.json())
-    //     .then(song => {
-    //         console.log(song)
-    //         dispatch({type: 'ADD_SONG', song})
-    //         history.push("/songs")
-    //     })
-    // }
+    
+    return dispatch => {
+        fetch("/songs", {
+            method: "POST", 
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(songData)
+        })
+        .then(r => r.json())
+        .then(song => {
+            console.log(song)
+            dispatch({type: 'ADD_SONG', song})
+            history.push(`playlists/${id}`)
+        })
+    }
 }
