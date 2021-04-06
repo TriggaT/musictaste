@@ -5,7 +5,7 @@ import {getPlaylists} from '../actions/index'
 import {Route} from 'react-router-dom';
 import Playlist from "./Playlist"
 
-class Playlists extends Component {
+class ListPlaylists extends Component {
     
 
 
@@ -24,4 +24,4 @@ class Playlists extends Component {
 
 
 
-export default Playlists
+export default ListPlaylists
