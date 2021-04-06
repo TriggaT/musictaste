@@ -27,7 +27,6 @@ export const addPlaylist = (playlist, history) => {
         })
         .then(r => r.json())
         .then(playlist => {
-            console.log(playlist)
             dispatch({type: 'ADD_PLAYLIST', playlist})
             history.push("/playlists")
         })

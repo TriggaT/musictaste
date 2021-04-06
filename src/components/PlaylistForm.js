@@ -41,4 +41,4 @@ class PlaylistForm extends Component {
     }
 }
 
-export default connect(null, {addSong})(PlaylistForm)
+export default connect(null, {addPlaylist})(PlaylistForm)
