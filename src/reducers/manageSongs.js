@@ -20,6 +20,8 @@ function manageLoad(state = false, action){
 
 function managePlaylist(state =[], action){
     switch(action.type){
+        case "SET_SPLAYLISTS":
+            return state = action.playlists
         default:
             return state;
     }
