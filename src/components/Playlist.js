@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Songs from "./Songs"
 import { NavLink } from 'react-router-dom';
+import SongsContainer from "../containers/SongsContainer";
 
 class Playlist extends Component {
     render() {
@@ -16,7 +17,7 @@ class Playlist extends Component {
             <>
             <h3>{playlist.name}</h3>
             <h4>{playlist.description}</h4>
-            <Songs songs={associatedSongs} playlistId={playlist.id} match={match}/> 
+            <SongsContainer songs={associatedSongs} playlistId={playlist.id} match={match}/> 
 
             {/* <h3>Songs</h3>
                 <ol>
