@@ -42,11 +42,12 @@ export class PlaylistsContainer extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        playlists: state.playlists
+        playlists: state.playlists,
+        songs: state.songs
     }
 }
 
 
-export default connect(mapStateToProps, { getPlaylists })(PlaylistsContainer)
+export default connect(mapStateToProps, { getPlaylists, getSongs })(PlaylistsContainer)
 
 
