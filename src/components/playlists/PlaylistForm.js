@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {addPlaylist} from '../actions/index'
+import {addPlaylist} from '../../actions/index'
 import {connect} from 'react-redux'
 
 class PlaylistForm extends Component {

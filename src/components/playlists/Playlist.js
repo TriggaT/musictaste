@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import SongsContainer from "../containers/SongsContainer";
+import SongsContainer from "../../containers/SongsContainer";
 
 class Playlist extends Component {
     render() {
