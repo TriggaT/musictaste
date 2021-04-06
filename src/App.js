@@ -5,7 +5,7 @@ import Home from "./components/Home";
 import NavBar from './components/NavBar'
 import SongForm from "./components/SongForm";
 import Songs from "./components/Songs";
-import Playlist from './components/Playlist'
+import Playlist from './components/Playlists'
 
 class App extends Component {
   render(){
