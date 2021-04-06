@@ -20,7 +20,7 @@ class App extends Component {
           <Route exact path="/songs" component={Songs}/>
           <Route exact path="/songs/new" component={SongForm}/>
           <Route exact path="/playlists" component={Playlists}/>
-          <Route path="/playlists/:id" render={routerProps => <Playlist {...routerProps} playlists={playlists} /> }/>
+          <Route path="/playlists/:id" component={({match}) => <Playlist /> }/>
           <Route component={ErrorPage}/>
           </Switch>
         </Router>

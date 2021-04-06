@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class Playlist extends Component {
     render() {
         const {playlist} = this.props
-        console.log(playlist)
+        console.log(this.props)
         return (
             <>
             {/* <h3>{playlist.name}</h3>

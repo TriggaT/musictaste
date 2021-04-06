@@ -2,19 +2,21 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom';
 import {connect} from 'react-redux'
 import {getPlaylists} from '../actions/index'
+import {Route} from 'react-router-dom';
+import Playlist from "./Playlist"
 
-class Playlist extends Component {
+class Playlists extends Component {
     componentDidMount = () => {
         this.props.getPlaylists()
     }
 
 
     render() {
-        console.log(this.props.playlists)
         return (
             <div>
+                 {/* <Route path="/playlists/:id" component={({match}) => <Playlist {...props} /> }/> */}
                 {this.props.playlists.map(playlist => 
-                    <NavLink to={`/playlists/${playlist.id}`} playlist={playlist}>{playlist.name}</NavLink>)} 
+                    <NavLink to={`/playlists/${playlist.id}`}>{playlist.name}</NavLink>)} 
                 
                 
             </div>
@@ -29,4 +31,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps, { getPlaylists })(Playlist)
+export default connect(mapStateToProps, { getPlaylists })(Playlists)
