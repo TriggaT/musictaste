@@ -5,8 +5,9 @@ import Home from "./components/Home";
 import NavBar from './components/NavBar'
 import SongForm from "./components/SongForm";
 import Songs from "./components/Songs";
-import Playlist from './components/Playlist'
-import Playlists from './components/Playlists'
+// import Playlist from './components/Playlist'
+// import Playlists from './components/Playlists'
+import PlaylistsContainer from "./components/containers/PlaylistsContainer";
 
 class App extends Component {
   render(){
@@ -19,8 +20,9 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/songs" component={Songs}/>
           <Route exact path="/songs/new" component={SongForm}/>
-          <Route exact path="/playlists" component={Playlists}/>
-          <Route path="/playlists/:id" component={({match}) => <Playlist /> }/>
+          <Route path='/playlists' render={routerProps => <PlaylistsContainer {...routerProps}/>} />
+          {/* <Route exact path="/playlists" component={Playlists}/>
+          <Route path="/playlists/:id" component={({match}) => <Playlist /> }/> */}
           <Route component={ErrorPage}/>
           </Switch>
         </Router>
