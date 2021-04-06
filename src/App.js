@@ -3,12 +3,8 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import ErrorPage from "./components/ErrorPage";
 import Home from "./components/Home";
 import NavBar from './components/NavBar'
-import SongForm from "./components/SongForm";
-import Songs from "./components/Songs";
-// import Playlist from './components/Playlist'
-// import Playlists from './components/Playlists'
 import PlaylistsContainer from "./containers/PlaylistsContainer";
-import PlaylistForm from './components/PlaylistForm';
+
 
 class App extends Component {
   render(){
@@ -19,12 +15,7 @@ class App extends Component {
           <NavBar/>
           <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/songs" component={Songs}/>
-          {/* <Route exact path="/playlists/:playlistId/songs/new" component={SongForm}/> */}
           <Route path='/playlists' render={routerProps => <PlaylistsContainer {...routerProps}/>} />
-          
-          {/* <Route exact path="/playlists" component={Playlists}/>
-          <Route path="/playlists/:id" component={({match}) => <Playlist /> }/> */}
           <Route component={ErrorPage}/>
           </Switch>
         </Router>
