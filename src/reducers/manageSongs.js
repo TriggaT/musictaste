@@ -41,7 +41,7 @@ function manageSongs(state = [], action){
             return state = action.songs
             
         case "ADD_SONG":
-            return [state, action.song]
+            return [...state, action.song]
         default:
             return state;
     }
