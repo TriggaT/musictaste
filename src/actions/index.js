@@ -3,7 +3,7 @@ export const getPlaylists = () => {
     return dispatch => {
         fetch("/playlists")
         .then(r => r.json())
-        .then(playlists => {
+        .then(playlists => { 
             dispatch({type: 'SET_PLAYLISTS', playlists})}
         )
         
