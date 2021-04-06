@@ -12,9 +12,12 @@ class ListPlaylists extends Component {
     render() {
         return (
             <div>
-                 {/* <Route path="/playlists/:id" component={({match}) => <Playlist {...props} /> }/> */}
+    
                 {this.props.playlists.map(playlist => 
-                    <NavLink key={playlist.id} to={`/playlists/${playlist.id}`}>{playlist.name}</NavLink>)} 
+                    <NavLink key={playlist.id} to={`/playlists/${playlist.id}`}>{playlist.name}</NavLink>)
+                } 
+                
+                <NavLink  to="/playlists/new">Create New Playlist</NavLink>)
                 
                 
             </div>
