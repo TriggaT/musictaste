@@ -6,9 +6,7 @@ import {Route} from 'react-router-dom';
 import Playlist from "./Playlist"
 
 class Playlists extends Component {
-    componentDidMount = () => {
-        this.props.getPlaylists()
-    }
+    
 
 
     render() {
@@ -24,11 +22,6 @@ class Playlists extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        playlists: state.playlists
-    }
-}
 
 
-export default connect(mapStateToProps, { getPlaylists })(Playlists)
+export default Playlists

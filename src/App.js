@@ -7,7 +7,7 @@ import SongForm from "./components/SongForm";
 import Songs from "./components/Songs";
 // import Playlist from './components/Playlist'
 // import Playlists from './components/Playlists'
-import PlaylistsContainer from "./components/containers/PlaylistsContainer";
+import PlaylistsContainer from "./containers/PlaylistsContainer";
 
 class App extends Component {
   render(){
