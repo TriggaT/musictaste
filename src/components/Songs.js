@@ -22,13 +22,12 @@ class Songs extends Component {
 
             )
         }
-        console.log(this.props)
         return (
             <div>
                 <h3>Songs</h3>
                 <ol>
                     {this.props.songs.map(song => 
-                        <Song key={song.id} song={song} />  )} 
+                        <Song  song={song} />  )} 
                 </ol>
 
                 <NavLink to="/songs/new">Add New Song</NavLink>

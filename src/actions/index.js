@@ -1,4 +1,15 @@
 
+export const getPlaylists = () => {
+    return dispatch => {
+        fetch("/playlists")
+        .then(r => r.json())
+        .then(playlists => {
+            dispatch({type: 'SET_PLAYLISTS', playlists})}
+        )
+        
+    }
+}
+
 export const getSongs = () => {
     return dispatch => {
         // dispatch({ type: 'LOADING_SONGS'})
@@ -11,11 +22,13 @@ export const getSongs = () => {
     }
 }
 
+
+
 export const addSong = (song, history) => {
     const songData = {
         title: song.title, 
         artist: song.artist,
-        playlistId: song.playlistId
+        playlistId: 2
     }
     
     return dispatch => {
@@ -29,6 +42,7 @@ export const addSong = (song, history) => {
         })
         .then(r => r.json())
         .then(song => {
+            console.log(song)
             dispatch({type: 'ADD_SONG', song})
             history.push("/songs")
         })

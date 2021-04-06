@@ -5,7 +5,7 @@ class Playlist extends Component {
     render() {
         return (
             <div>
-                <NavLink to="/songs">Songs</NavLink>
+                
                 
             </div>
         )

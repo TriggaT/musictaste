@@ -2,8 +2,8 @@ import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
     playlists: managePlaylist,
-    songs: manageSongs,
-    loading: manageLoad 
+    songs: manageSongs
+    // loading: manageLoad 
 });
   
 export default rootReducer;
@@ -33,10 +33,11 @@ function manageSongs(state = [], action){
         //     return [...state] 
         //     // loading: true }
         case "SET_SONGS":
-            return action.songs
+            
+            return state = action.songs
             
         case "ADD_SONG":
-            return [...state, action.song]
+            return [state, action.song]
         default:
             return state;
     }
