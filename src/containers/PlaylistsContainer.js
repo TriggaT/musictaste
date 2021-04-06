@@ -30,7 +30,7 @@ export class PlaylistsContainer extends Component {
                 
                 <Route path={`${this.props.match.url}/:playlistId`} render={routerProps => <Playlist {...routerProps} playlists={this.props.playlists} songs={this.props.songs} /> }/>
 
-                <Route path={`${this.props.match.url}/songs/new`} component={SongForm}/>
+                <Route path={`playlist/:playlistId/songs/new`} component={SongForm}/>
                 
                 </Switch>
                 

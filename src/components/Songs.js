@@ -12,7 +12,8 @@ class Songs extends Component {
 
 
     render() {
-        const { songs } = this.props; 
+        const { songs, playlistId, match } = this.props; 
+        console.log(match.url)
 
         // if (this.props.loading){ 
             
@@ -32,7 +33,7 @@ class Songs extends Component {
                         <Song  song={song} />  )} 
                 </ol>
 
-                <NavLink to={`/songs/new`}>Add New Song</NavLink>
+                <NavLink to={`${match.url}/songs/new`}>Add New Song</NavLink>
                 
             </div>
         )

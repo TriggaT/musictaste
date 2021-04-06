@@ -16,7 +16,7 @@ class Playlist extends Component {
             <>
             <h3>{playlist.name}</h3>
             <h4>{playlist.description}</h4>
-            <Songs songs={associatedSongs} playlistId={playlist.id} /> 
+            <Songs songs={associatedSongs} playlistId={playlist.id} match={match}/> 
 
             {/* <h3>Songs</h3>
                 <ol>
