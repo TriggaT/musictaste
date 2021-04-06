@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Songs from "../components/Songs"
+import Songs from "../components/songs/Songs"
 import {Route} from 'react-router-dom';
-import SongForm from "../components/SongForm";
+import SongForm from "../components/songs/SongForm";
 
 export default class SongsContainer extends Component {
     
@@ -10,7 +10,7 @@ export default class SongsContainer extends Component {
         const { songs, playlistId, match } = this.props; 
         return (
             <div>
-                <Songs songs={songs} playlistId={playlistId} match={match}/> 
+                <Songs songs={songs} match={match}/> 
                 <br /> 
                 <Route path={`/playlists/${playlistId}/songs/new`} render={routerProps => <SongForm {...routerProps} playlistId={playlistId}  /> }/>
 

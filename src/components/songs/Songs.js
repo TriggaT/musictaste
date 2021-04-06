@@ -4,7 +4,7 @@ import Song from "./Song"
 
 class Songs extends Component {
     render() {
-        const { songs, playlistId, match } = this.props;     
+        const { songs, match } = this.props;     
         return (
             <div>
                 <h3>Songs</h3>

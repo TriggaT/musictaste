@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {addSong} from '../actions/index'
+import {addSong} from '../../actions/index'
 import {connect} from 'react-redux'
 
 class SongForm extends Component {
