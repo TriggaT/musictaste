@@ -10,6 +10,30 @@ export const getPlaylists = () => {
     }
 }
 
+export const addPlaylist = (playlist, history) => {
+    const playlistData = {
+        name: playlist.name, 
+        description: playlist.artist
+    }
+    
+    return dispatch => {
+        fetch("/playlists", {
+            method: "POST", 
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(playlistData)
+        })
+        .then(r => r.json())
+        .then(playlist => {
+            console.log(playlist)
+            dispatch({type: 'ADD_PLAYLIST', playlist})
+            history.push("/playlists")
+        })
+    }
+}
+
 export const getSongs = () => {
     return dispatch => {
         // dispatch({ type: 'LOADING_SONGS'})
