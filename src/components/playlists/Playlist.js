@@ -9,8 +9,6 @@ class Playlist extends Component {
 
         const associatedSongs = songs.filter(song => song.playlist_id === playlist.id);
         const associatedReviews = reviews.filter(review => review.playlist_id === playlist.id);
-
-        console.log(associatedReviews)
         
         return (
             <>

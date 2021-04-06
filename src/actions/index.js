@@ -74,7 +74,6 @@ export const getReviews = () => {
         fetch("/reviews")
         .then(r => r.json())
         .then(reviews => {
-            console.log(reviews)
             dispatch({type: 'GET_REVIEWS', reviews})}
         )
     }
