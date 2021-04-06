@@ -20,7 +20,7 @@ class ListPlaylists extends Component {
                 } 
                 
                 <br /> 
-                <NavLink  to="/playlists/new">Create New Playlist</NavLink>
+                
 
 
 

@@ -22,6 +22,7 @@ class App extends Component {
           <Route exact path="/songs" component={Songs}/>
           <Route exact path="/songs/new" component={SongForm}/>
           <Route path='/playlists' render={routerProps => <PlaylistsContainer {...routerProps}/>} />
+          
           {/* <Route exact path="/playlists" component={Playlists}/>
           <Route path="/playlists/:id" component={({match}) => <Playlist /> }/> */}
           <Route component={ErrorPage}/>

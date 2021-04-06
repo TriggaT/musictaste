@@ -15,14 +15,22 @@ export class PlaylistsContainer extends Component {
     render() {
         return (
             <div>
+                
              
                 <ListPlaylists playlists={this.props.playlists} /> 
-                {/* <Route exact path={this.props.match.url} render={() => <h4>Choose any of the above playlist</h4>}/> */}
+
+                <NavLink  to="/playlists/new">New Playlist</NavLink>
                 <Switch>
-                <Route exact path="/playlists/new" component={PlaylistForm} />
+               
+                <Route path="/playlists/new" component={PlaylistForm} />
+                
                 <Route path={`${this.props.match.url}/:playlistId`} render={routerProps => <Playlist {...routerProps} playlists={this.props.playlists} /> }/>
                 
                 </Switch>
+                
+                {/* <Route exact path={this.props.match.url} render={() => <h4>Choose any of the above playlist</h4>}/> */}
+                
+                
                 
             
                 

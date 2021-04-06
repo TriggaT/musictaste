@@ -27,12 +27,13 @@ class PlaylistForm extends Component {
     render() {
         return (
             <div>
+                <br /> 
                 <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="name">Name:</label>
+                    <label htmlFor="name">Name:</label><br /> 
                     <input name="name" type="text" value={this.state.name} onChange={this.handleChange}/><br /> 
-                    <label htmlFor="description">Description:</label>
-                    <input name="description" type="text" value={this.state.description} onChange={this.handleChange}/><br />
-                    <input type="submit" value="Add Song" />
+                    <label htmlFor="description">Description:</label> <br/ > 
+                    <input name="description" type="text" value={this.state.description} onChange={this.handleChange}/><br /><br /> 
+                    <input type="submit" value="Create Playlist" />
                 </form>
                 
                 
