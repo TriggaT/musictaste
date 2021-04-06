@@ -44,8 +44,6 @@ export const getSongs = () => {
     }
 }
 
-
-
 export const addSong = (song, id, history) => {
     const songData = {
         title: song.title, 
@@ -70,3 +68,15 @@ export const addSong = (song, id, history) => {
         })
     }
 }
+
+export const getReviews = () => {
+    return dispatch => {
+        fetch("/reviews")
+        .then(r => r.json())
+        .then(reviews => {
+            console.log(reviews)
+            dispatch({type: 'GET_REVIEWS', reviews})}
+        )
+    }
+}
+

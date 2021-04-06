@@ -5,6 +5,7 @@ class Playlist extends Component {
     render() {
         const {playlists, match, songs} = this.props;
         const playlist = playlists.find(p => p.id === parseInt(match.params.playlistId));
+        
         const associatedSongs = songs.filter(song => song.playlist_id === playlist.id);
         
         return (
