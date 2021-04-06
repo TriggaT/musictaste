@@ -26,7 +26,7 @@ export class PlaylistsContainer extends Component {
                 <Route path="/playlists/new" component={PlaylistForm} />
                 <Route path={`${this.props.match.url}/:playlistId`} render={routerProps => <Playlist {...routerProps} playlists={this.props.playlists} songs={this.props.songs} /> }/>
                 </Switch>
-   
+                
             </div>
         )
     }
