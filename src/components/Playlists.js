@@ -10,7 +10,7 @@ class Playlist extends Component {
 
 
     render() {
-        // console.log(this.props.playlists)
+        console.log(this.props.playlists)
         return (
             <div>
                 {/* {this.props.playlists.map(playlist => 
@@ -22,5 +22,11 @@ class Playlist extends Component {
     }
 }
 
+const mapStateToProps = (state) => {
+    return {
+        playlists: state.playlists
+    }
+}
 
-export default connect(null, { getPlaylists })(Playlist)
+
+export default connect(mapStateToProps, { getPlaylists })(Playlist)
