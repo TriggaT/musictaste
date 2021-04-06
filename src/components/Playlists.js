@@ -13,8 +13,8 @@ class Playlist extends Component {
         console.log(this.props.playlists)
         return (
             <div>
-                {/* {this.props.playlists.map(playlist => 
-                    <NavLink  playlist={playlist}>{playlist.name}</NavLink> )}  */}
+                {this.props.playlists.map(playlist => 
+                    <NavLink  playlist={playlist}>{playlist.name}</NavLink> )} 
                 
                 
             </div>
