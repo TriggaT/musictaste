@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import Songs from "./Songs"
-import { NavLink } from 'react-router-dom';
 import SongsContainer from "../containers/SongsContainer";
 
 class Playlist extends Component {
