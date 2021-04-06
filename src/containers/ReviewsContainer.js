@@ -14,7 +14,10 @@ class ReviewsContainer extends Component {
 
         return (
             <div>
-                <h4>Average Rating: </h4>
+                <h4>Average Rating: {average(reviews.map(r => r.rating))} </h4>
+                {reviews.map(r => {
+                    <Review review={r} /> 
+                })}
                 
             </div>
         )
