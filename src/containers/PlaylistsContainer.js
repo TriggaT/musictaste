@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {getPlaylists} from '../actions/index'
+import {getSongs} from '../actions/index'
 import {Switch, Route} from 'react-router-dom';
 import Playlist from "../components/Playlist"
 import ListPlaylists from "../components/ListPlaylists"
@@ -10,6 +11,7 @@ import { NavLink } from 'react-router-dom';
 export class PlaylistsContainer extends Component {
     componentDidMount = () => {
         this.props.getPlaylists()
+        this.props.getSongs()
     }
 
     render() {
@@ -25,7 +27,7 @@ export class PlaylistsContainer extends Component {
                
                 <Route path="/playlists/new" component={PlaylistForm} />
                 
-                <Route path={`${this.props.match.url}/:playlistId`} render={routerProps => <Playlist {...routerProps} playlists={this.props.playlists} /> }/>
+                <Route path={`${this.props.match.url}/:playlistId`} render={routerProps => <Playlist {...routerProps} playlists={this.props.playlists} songs={this.props.songs} /> }/>
                 
                 </Switch>
                 
