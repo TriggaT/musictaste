@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Songs from "../components/Songs"
+import {Route} from 'react-router-dom';
 
 export default class SongsContainer extends Component {
     
@@ -9,7 +11,7 @@ export default class SongsContainer extends Component {
             <div>
                 
              
-                <Songs songs={songs} /> 
+                <Songs songs={songs} playlistId={playlistId} match={match}/> 
                 <br /> 
 
                 
