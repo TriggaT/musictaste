@@ -14,6 +14,15 @@ class PlaylistForm extends Component {
         console.log(this.state)
     }
 
+    handleSubmit = e => {
+        e.preventDefault()
+        console.log(this.state)
+        this.setState({
+            name: "",
+        description: ""
+        })
+    }
+
 
     render() {
         return (
