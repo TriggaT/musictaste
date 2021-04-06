@@ -15,7 +15,7 @@ export default class SongsContainer extends Component {
                 <Songs songs={songs} playlistId={playlistId} match={match}/> 
                 <br /> 
                
-                <Route path={`/playlists/${playlistId}/songs/new`} component={SongForm}/>
+                <Route path={`/playlists/${playlistId}/songs/new`} render={routerProps => <SongForm {...routerProps} playlistId={playlistId}  /> }/>
 
 
                 
