@@ -1,7 +1,23 @@
+import { combineReducers } from "redux";
+
+const rootReducer = combineReducers({
+    playlists: managePlaylist,
+    songs: manageSongs,
+    loading: 
+});
+  
+export default rootReducer;
+
+function managePlaylist(state =[], action){
+    switch(action.type){
+        default:
+            return state;
+    }
+
+}
 
 
-
-const manageSongs = (state = {songs: [], loading: true}, action) => {
+function manageSongs(state = [], action){
     switch(action.type) {
         case 'LOADING_SONGS':
             return {...state, 
@@ -18,4 +34,3 @@ const manageSongs = (state = {songs: [], loading: true}, action) => {
     }
 }
 
-export default manageSongs
