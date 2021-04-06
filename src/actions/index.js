@@ -13,7 +13,7 @@ export const getPlaylists = () => {
 export const addPlaylist = (playlist, history) => {
     const playlistData = {
         name: playlist.name, 
-        description: playlist.artist
+        description: playlist.description
     }
     
     return dispatch => {

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import {addPlaylist} from '../actions/index'
+import {connect} from 'react-redux'
 
 class PlaylistForm extends Component {
     state = {
@@ -10,13 +12,11 @@ class PlaylistForm extends Component {
         this.setState({
             [e.target.name]: e.target.value 
         })
-
-        console.log(this.state)
     }
 
     handleSubmit = e => {
         e.preventDefault()
-        console.log(this.state)
+        this.props.addPlaylist(this.state, this.props.history)
         this.setState({
             name: "",
             description: ""
@@ -41,4 +41,4 @@ class PlaylistForm extends Component {
     }
 }
 
-export default PlaylistForm
+export default connect(null, {addSong})(PlaylistForm)
