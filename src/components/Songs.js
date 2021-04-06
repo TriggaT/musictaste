@@ -12,7 +12,8 @@ class Songs extends Component {
 
 
     render() {
-        if (this.props.loading){
+        if (this.props.loading){ 
+            
             return (
                 <>
                 <h3>Songs</h3>
@@ -21,6 +22,7 @@ class Songs extends Component {
 
             )
         }
+        console.log(this.props)
         return (
             <div>
                 <h3>Songs</h3>

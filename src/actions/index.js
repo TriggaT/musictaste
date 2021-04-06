@@ -1,12 +1,13 @@
 
 export const getSongs = () => {
     return dispatch => {
-        dispatch({ type: 'LOADING_SONGS'})
+        // dispatch({ type: 'LOADING_SONGS'})
         fetch("/songs")
         .then(r => r.json())
         .then(songs => {
             dispatch({type: 'SET_SONGS', songs})}
-        ) 
+        )
+        
     }
 }
 
