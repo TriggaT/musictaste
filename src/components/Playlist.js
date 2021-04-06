@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import Song from "./Song"
+import Songs from "./Songs"
+import { NavLink } from 'react-router-dom';
 
 class Playlist extends Component {
     render() {
@@ -9,20 +10,22 @@ class Playlist extends Component {
         
         const associatedSongs = songs.filter(song => song.playlist_id === playlist.id)
 
-        console.log(associatedSongs)
 
 
         return (
             <>
             <h3>{playlist.name}</h3>
             <h4>{playlist.description}</h4>
+            <Songs songs={associatedSongs} /> 
 
-            <h3>Songs</h3>
+            {/* <h3>Songs</h3>
                 <ol>
                     {associatedSongs.map(song => 
                         <Song  song={song} />  )
                     } 
                 </ol>
+
+                <NavLink to={`playlists/${playlist.id}/songs/new`}>Add New Song</NavLink> */}
                 
             </>
         )

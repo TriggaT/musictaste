@@ -5,43 +5,45 @@ import {getSongs} from '../actions/index'
 import Song from "./Song"
 
 class Songs extends Component {
-    componentDidMount = () => {
-        this.props.getSongs()
-    }
+    // componentDidMount = () => {
+    //     this.props.getSongs()
+    // }
 
 
 
     render() {
-        if (this.props.loading){ 
-            
-            return (
-                <>
-                <h3>Songs</h3>
-                <h4>Loading...</h4>
-                </>
+        const { songs } = this.props; 
 
-            )
-        }
+        // if (this.props.loading){ 
+            
+        //     return (
+        //         <>
+        //         <h3>Songs</h3>
+        //         <h4>Loading...</h4>
+        //         </>
+
+        //     )
+        // }
         return (
             <div>
                 <h3>Songs</h3>
                 <ol>
-                    {this.props.songs.map(song => 
+                    {songs.map(song => 
                         <Song  song={song} />  )} 
                 </ol>
 
-                <NavLink to="/songs/new">Add New Song</NavLink>
+                <NavLink to={`/songs/new`}>Add New Song</NavLink>
                 
             </div>
         )
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        songs: state.songs,
-        loading: state.loading
-    }
-}
+// const mapStateToProps = (state) => {
+//     return {
+//         songs: state.songs,
+//         loading: state.loading
+//     }
+// }
 
-export default connect(mapStateToProps, {getSongs})(Songs)
+export default Songs

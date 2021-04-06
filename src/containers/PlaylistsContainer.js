@@ -6,6 +6,7 @@ import Playlist from "../components/Playlist"
 import ListPlaylists from "../components/ListPlaylists"
 import {connect} from 'react-redux'
 import PlaylistForm from '../components/PlaylistForm';
+import SongForm from "../components/SongForm";
 import { NavLink } from 'react-router-dom';
 
 export class PlaylistsContainer extends Component {
@@ -28,6 +29,8 @@ export class PlaylistsContainer extends Component {
                 <Route path="/playlists/new" component={PlaylistForm} />
                 
                 <Route path={`${this.props.match.url}/:playlistId`} render={routerProps => <Playlist {...routerProps} playlists={this.props.playlists} songs={this.props.songs} /> }/>
+
+                <Route path={`${this.props.match.url}/songs/new`} component={SongForm}/>
                 
                 </Switch>
                 
