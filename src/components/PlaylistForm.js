@@ -19,7 +19,7 @@ class PlaylistForm extends Component {
         console.log(this.state)
         this.setState({
             name: "",
-        description: ""
+            description: ""
         })
     }
 

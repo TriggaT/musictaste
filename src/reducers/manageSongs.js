@@ -22,6 +22,8 @@ function managePlaylist(state = [], action){
     switch(action.type){
         case "SET_PLAYLISTS":
             return state = action.playlists
+        case "ADD_PLAYLISTS":
+            return [state, action.playlist]
         default:
             return state;
     }
