@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Songs from "../components/Songs"
-import {Route} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
+import SongForm from "../components/SongForm";
 
 export default class SongsContainer extends Component {
     
@@ -13,9 +14,16 @@ export default class SongsContainer extends Component {
              
                 <Songs songs={songs} playlistId={playlistId} match={match}/> 
                 <br /> 
+               
+                <Route path={`/playlists/${playlistId}/songs/new`} component={SongForm}/>
+
 
                 
-                {/* <Route exact path={this.props.match.url} render={() => <h4>Choose any of the above playlist</h4>}/> */}
+
+                 
+
+                
+        
                 
                 
                 
