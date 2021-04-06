@@ -14,8 +14,8 @@ export class PlaylistsContainer extends Component {
         return (
             <div>
                 <Playlists playlists={this.props.playlists} /> 
-                <Route exact path={this.props.match.url} render={() => <h4>Choose any of the above playlist</h4>}/>
-                <Route path={`${match.url}/:playlistId`} render={routerProps => <Playlist {...routerProps} movies={movies} /> }/>
+                {/* <Route exact path={this.props.match.url} render={() => <h4>Choose any of the above playlist</h4>}/> */}
+                <Route path={`${this.props.match.url}/:playlistId`} render={routerProps => <Playlist {...routerProps} playlists={this.props.playlists} /> }/>
             
                 
             </div>

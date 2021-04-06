@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import {connect} from 'react-redux'
 import {getPlaylists} from '../actions/index'
 import {Route} from 'react-router-dom';
@@ -14,7 +14,7 @@ class Playlists extends Component {
             <div>
                  {/* <Route path="/playlists/:id" component={({match}) => <Playlist {...props} /> }/> */}
                 {this.props.playlists.map(playlist => 
-                    <Link key={playlist.id} to={`/playlists/${playlist.id}`}>{playlist.name}</Link>)} 
+                    <NavLink key={playlist.id} to={`/playlists/${playlist.id}`}>{playlist.name}</NavLink>)} 
                 
                 
             </div>
