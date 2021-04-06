@@ -17,7 +17,7 @@ class SongForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        this.props.addSong(this.state, this.props.history, this.props.playlistID)
+        this.props.addSong(this.state, this.props.playlistId, this.props.history)
         this.setState({
             title: "",
             artist: ""

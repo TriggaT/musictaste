@@ -30,7 +30,7 @@ class Songs extends Component {
                 <h3>Songs</h3>
                 <ol>
                     {songs.map(song => 
-                        <Song  song={song} />  )} 
+                        <Song  key={song.id} song={song} />  )} 
                 </ol>
 
                 <NavLink to={`${match.url}/songs/new`}>Add New Song</NavLink>

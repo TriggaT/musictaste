@@ -47,27 +47,29 @@ export const getSongs = () => {
 
 
 
-export const addSong = (song, history) => {
+export const addSong = (song, id, history) => {
     const songData = {
         title: song.title, 
         artist: song.artist,
-        playlistId: 2
+        playlist_id: id
     }
+
+    console.log(songData)
     
-    return dispatch => {
-        fetch("/songs", {
-            method: "POST", 
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(songData)
-        })
-        .then(r => r.json())
-        .then(song => {
-            console.log(song)
-            dispatch({type: 'ADD_SONG', song})
-            history.push("/songs")
-        })
-    }
+    // return dispatch => {
+    //     fetch("/songs", {
+    //         method: "POST", 
+    //         headers: {
+    //             "Accept": "application/json",
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: JSON.stringify(songData)
+    //     })
+    //     .then(r => r.json())
+    //     .then(song => {
+    //         console.log(song)
+    //         dispatch({type: 'ADD_SONG', song})
+    //         history.push("/songs")
+    //     })
+    // }
 }
