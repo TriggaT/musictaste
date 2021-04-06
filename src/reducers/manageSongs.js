@@ -3,10 +3,18 @@ import { combineReducers } from "redux";
 const rootReducer = combineReducers({
     playlists: managePlaylist,
     songs: manageSongs,
-    loading: 
+    loading: manageLoad 
 });
   
 export default rootReducer;
+
+function manageLoad(state = true, action){
+    switch(action.type){
+        default:
+            return state;
+    }
+
+}
 
 function managePlaylist(state =[], action){
     switch(action.type){
