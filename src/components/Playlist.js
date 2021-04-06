@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 
-export class Playlist extends Component {
+class Playlist extends Component {
     render() {
+        const {playlist} = this.props
         return (
-            <div>
+            <>
+            <h3>{playlist.name}</h3>
+            <h4>{playlist.description}</h4>
                 
-            </div>
+            </>
         )
     }
 }
