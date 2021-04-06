@@ -34,8 +34,7 @@ class PlaylistForm extends Component {
                     <label htmlFor="description">Description:</label> <br/ > 
                     <input name="description" type="text" value={this.state.description} onChange={this.handleChange}/><br /><br />
                     <input type="submit" value="Create Playlist" />
-                </form>
-                
+                </form> 
                 
             </div>
         )

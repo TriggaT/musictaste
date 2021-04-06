@@ -8,8 +8,7 @@ export class Song extends Component {
             <li>
                 <strong>Title:</strong> {song.title} <br /> 
                 <strong>Artist:</strong> {song.artist}
-            </li> <br /> 
-                
+            </li> <br />    
             </>
         )
     }
