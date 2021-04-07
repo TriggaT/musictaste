@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
+import {addReview} from '../../actions/index'
+import {connect} from 'react-redux'
 
 class ReviewForm extends Component {
+    
 
     state ={
         rating: "1",
@@ -15,15 +18,13 @@ class ReviewForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        console.log(this.state)
+        this.props.addReview(this.state, this.props.playlistId, this.props.history)
+        this.setState({
+            rating: "1",
+            text:""
+        })
+        
     }
-
-
-
-
-
-    
-
 
     render() {
         
@@ -48,4 +49,4 @@ class ReviewForm extends Component {
     }
 }
 
-export default ReviewForm
+export default connect(null, {addReview})(ReviewForm)
