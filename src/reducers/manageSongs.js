@@ -3,7 +3,8 @@ import { combineReducers } from "redux";
 const rootReducer = combineReducers({
     playlists: managePlaylist,
     songs: manageSongs,
-    reviews: manageReviews
+    reviews: manageReviews,
+    users: manageUsers
     // loading: manageLoad 
 });
   
