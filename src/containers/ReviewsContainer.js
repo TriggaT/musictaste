@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Reviews from "../components/reviews/Reviews"
+import Review from "../components/reviews/Review"
 
 
 class ReviewsContainer extends Component {
@@ -17,8 +17,11 @@ class ReviewsContainer extends Component {
         return (
             <div>
                 <h4>Average Rating: {average(reviews.map(r => r.rating))} </h4>
-                <Reviews reviews={reviews} /> 
-               
+                {reviews.map(r => { 
+                    return (
+                    <Review review={r} /> 
+                    )
+                })}
                 
             </div>
         )

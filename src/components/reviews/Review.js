@@ -9,7 +9,7 @@ export class Review extends Component {
                 <span>
                 <strong>Rating:</strong> {review.rating} <br /> 
                 <strong>Review:</strong> {review.text}
-                </span> <br />    
+                </span> <br /> <br/>   
             </>
 
         )
