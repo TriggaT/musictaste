@@ -4,6 +4,7 @@ import ErrorPage from "./components/ErrorPage";
 import Home from "./components/Home";
 import NavBar from './components/NavBar'
 import PlaylistsContainer from "./containers/PlaylistsContainer";
+import SignUpForm from "./components/users/SignUpForm";
 
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
           <Switch>
           <Route exact path="/" component={Home} />
           <Route path='/playlists' render={routerProps => <PlaylistsContainer {...routerProps}/>} />
+          <Route exact path="/signup" component={SignUpForm} />
           <Route component={ErrorPage}/>
           </Switch>
         </Router>
