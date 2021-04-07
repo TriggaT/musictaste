@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export class ReviewForm extends Component {
+class ReviewForm extends Component {
     render() {
         return (
             <div>
@@ -16,4 +16,4 @@ export class ReviewForm extends Component {
     }
 }
 
-export default Reviews
+export default ReviewForm
