@@ -57,3 +57,10 @@ function manageReviews(state = [], action){
     }
 }
 
+function manageUsers(state = [], action){
+    switch(action.type) {
+        default:
+            return state;
+    }
+}
+
