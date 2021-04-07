@@ -1,7 +1,7 @@
 export const createUser = (user, history) => {
     const userData = {
         username: user.username, 
-        password: user.password
+        password_digest: user.password
     }
 
     return dispatch => {
