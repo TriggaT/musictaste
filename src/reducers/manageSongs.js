@@ -51,7 +51,7 @@ function manageReviews(state = [], action){
         case "GET_REVIEWS":
             return state = action.reviews
         case "ADD_REVIEW":
-            return [...state, action.song]
+            return [...state, action.review]
         default:
             return state;
     }

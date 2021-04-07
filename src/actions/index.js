@@ -81,10 +81,12 @@ export const getReviews = () => {
 
 export const addReview = (review, id, history) => {
     const reviewData = {
-        title: review.rating, 
-        artist: review.text,
+        rating: parseInt(review.rating), 
+        text: review.text,
         playlist_id: id
     }
+
+    console.log(reviewData)
 
     return dispatch => {
         fetch("/reviews", {
