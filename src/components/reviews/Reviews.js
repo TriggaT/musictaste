@@ -1,13 +1,18 @@
 import React, { Component } from 'react'
+import Review from '../reviews/Review'
+import {NavLink } from 'react-router-dom';
 
 
 export class Reviews extends Component {
     render() {
+        const { reviews, match  } = this.props;
+
+
         return (
             <div>
                 {reviews.map(r => { 
                     return (
-                    <Review review={r} /> 
+                    <Review key={r.id} review={r} /> 
                     )
                 })}
 

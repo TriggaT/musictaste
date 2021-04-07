@@ -18,7 +18,7 @@ class ReviewsContainer extends Component {
         return (
             <div>
                 <h4>Average Rating: {average(reviews.map(r => r.rating))} </h4>
-                <Reviews review={review} /> 
+                <Reviews reviews={reviews} match={match} /> 
                 
                 <Route path={`/playlists/${playlistId}/songs/new`} />
                  {/* render={routerProps => <ReviewForm {...routerProps} playlistId={playlistId}  /> }/> */}
