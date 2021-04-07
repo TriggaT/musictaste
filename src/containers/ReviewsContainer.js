@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Reviews from "../components/reviews/Reviews"
-import {Route, NavLink} from 'react-router-dom';
+import {Route} from 'react-router-dom';
+import ReviewForm from '../components/reviews/ReviewForm'
 
 
 class ReviewsContainer extends Component {
@@ -20,8 +21,7 @@ class ReviewsContainer extends Component {
                 <h4>Average Rating: {average(reviews.map(r => r.rating))} </h4>
                 <Reviews reviews={reviews} match={match} /> 
                 
-                <Route path={`/playlists/${playlistId}/songs/new`} />
-                 {/* render={routerProps => <ReviewForm {...routerProps} playlistId={playlistId}  /> }/> */}
+                <Route path={`/playlists/${playlistId}/reviews/new`} render={routerProps => <ReviewForm {...routerProps} playlistId={playlistId} /> }/> 
 
                 
                 
