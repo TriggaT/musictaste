@@ -38,9 +38,7 @@ function manageSongs(state = [], action){
         //     return [...state] 
         //     // loading: true }
         case "SET_SONGS":
-            
             return state = action.songs
-            
         case "ADD_SONG":
             return [...state, action.song]
         default:
@@ -52,6 +50,8 @@ function manageReviews(state = [], action){
     switch(action.type) {
         case "GET_REVIEWS":
             return state = action.reviews
+        case "ADD_REVIEW":
+            return [...state, action.song]
         default:
             return state;
     }

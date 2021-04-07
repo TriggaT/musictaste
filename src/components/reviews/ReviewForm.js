@@ -3,14 +3,19 @@ import React, { Component } from 'react'
 class ReviewForm extends Component {
 
     state ={
-        rating: "",
+        rating: "1",
         text:""
     }
 
-    handleChange = (e) => {
+    handleChange = e => {
         this.setState({
             [e.target.name]: e.target.value 
         })
+    }
+
+    handleSubmit = e => {
+        e.preventDefault()
+        console.log(this.state)
     }
 
 
@@ -25,7 +30,7 @@ class ReviewForm extends Component {
 
         return (
             <div>
-                <form >
+                <form onSubmit={this.handleSubmit}>
                     <label htmlFor="rating">Rating:</label>
                     <select name="rating" value={this.state.title} onChange={this.handleChange}>
                         <option value="1">1</option>
