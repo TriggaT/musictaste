@@ -1,3 +1,30 @@
+export const createUser = (user, history) => {
+    const userData = {
+        username: user.username, 
+        password: user.password
+    }
+
+    return dispatch => {
+        fetch("/users", {
+            method: "POST", 
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(userData)
+        })
+        .then(r => r.json())
+        .then(user => {
+            localStorage.setItem("token", user.jwt)
+            console.log({id: user.id, username:user.username})
+            
+            // dispatch({type: 'CREATE_USER', user})
+            // history.push("/")
+        })
+    }
+
+}
+
 
 export const getPlaylists = () => {
     return dispatch => {
@@ -105,4 +132,6 @@ export const addReview = (review, id, history) => {
         })
     }
 }
+
+
 
