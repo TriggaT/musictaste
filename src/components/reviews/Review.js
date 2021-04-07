@@ -6,9 +6,8 @@ export class Review extends Component {
         return (
             <>
                 <span>
-                <strong>Review:</strong> {review.text} <br />
-                <strong>Rating:</strong> {review.rating}  
-                
+                <i>Review:</i> {review.text} <br />
+                <i>Rating:</i> {review.rating}  
                 </span> <br /> <br/>   
             </>
 
