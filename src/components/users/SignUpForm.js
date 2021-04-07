@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import {createUser} from '../../actions/index'
+import {connect} from 'react-redux'
 
 export class SignUpForm extends Component {
     
@@ -34,4 +36,4 @@ export class SignUpForm extends Component {
     }
 }
 
-export default SignUpForm
+export default connect(null, {createUser})(SignUpForm)
