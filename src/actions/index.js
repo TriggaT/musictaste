@@ -79,3 +79,28 @@ export const getReviews = () => {
     }
 }
 
+export const addReview = (review, id, history) => {
+    const reviewData = {
+        title: review.rating, 
+        artist: review.text,
+        playlist_id: id
+    }
+
+    return dispatch => {
+        fetch("/reviews", {
+            method: "POST", 
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(reviewData)
+        })
+        .then(r => r.json())
+        .then(review => {
+            console.log(review)
+            dispatch({type: 'ADD_REVIEW', review})
+            history.push(`playlists/${id}`)
+        })
+    }
+}
+
