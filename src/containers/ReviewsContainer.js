@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Review from "../components/reviews/Review"
+import {Route, NavLink} from 'react-router-dom';
 
 
 class ReviewsContainer extends Component {
@@ -22,6 +23,11 @@ class ReviewsContainer extends Component {
                     <Review review={r} /> 
                     )
                 })}
+                
+                <Route path={`/playlists/${playlistId}/songs/new`} />
+                 {/* render={routerProps => <ReviewForm {...routerProps} playlistId={playlistId}  /> }/> */}
+
+                 <NavLink to={`${match.url}/reviews/new`}>Add Your Review</NavLink>
                 
             </div>
         )
