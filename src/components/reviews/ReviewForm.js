@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 
-export class Reviews extends Component {
+export class ReviewForm extends Component {
     render() {
-        const { reviews, match } = this.props; 
         return (
             <div>
                 
