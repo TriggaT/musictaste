@@ -19,7 +19,7 @@ export const createUser = (user, history) => {
             
             let user = {id: data.user.id, username: data.user.username}
             dispatch({type: 'SET_USER', user})
-            history.push("/")
+            history.push("/playlists")
         })
     }
 

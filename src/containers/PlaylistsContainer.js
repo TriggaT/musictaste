@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {getPlaylists} from '../actions/index'
-import {getSongs} from '../actions/index'
+import {getSongs, userLoggedIn} from '../actions/index'
 import {getReviews} from '../actions/index'
 import {Switch, Route} from 'react-router-dom';
 import Playlist from "../components/playlists/Playlist"
@@ -15,6 +15,7 @@ export class PlaylistsContainer extends Component {
         this.props.getPlaylists()
         this.props.getSongs()
         this.props.getReviews()
+        this.props.userLoggedIn()
     }
 
     render() {
@@ -38,11 +39,12 @@ const mapStateToProps = (state) => {
     return {
         playlists: state.playlists,
         songs: state.songs,
-        reviews: state.reviews
+        reviews: state.reviews,
+        currentUser: state.currentUser
     }
 }
 
 
-export default connect(mapStateToProps, { getPlaylists, getSongs, getReviews })(PlaylistsContainer)
+export default connect(mapStateToProps, { getPlaylists, getSongs, getReviews, userLoggedIn})(PlaylistsContainer)
 
 
