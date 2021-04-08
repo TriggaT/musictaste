@@ -25,7 +25,7 @@ export class LoginInForm extends Component {
                     <input name="username" type="text" value={this.state.username} onChange={this.handleChange}/><br /> 
                     <label htmlFor="password">Password:</label>
                     <input name="password" type="password" value={this.state.password} onChange={this.handleChange}/><br />
-                    <input type="submit" value="Sign Up" />
+                    <input type="submit" value="Log In" />
                 </form>
                 
             </div>

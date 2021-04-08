@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import NavBar from './components/NavBar'
 import PlaylistsContainer from "./containers/PlaylistsContainer";
 import SignUpForm from "./components/users/SignUpForm";
+import LogInForm from "./components/users/LogInForm";
 
 
 class App extends Component {
@@ -16,8 +17,9 @@ class App extends Component {
           <NavBar/>
           <Switch>
           <Route exact path="/" component={Home} />
-          <Route path='/playlists' render={routerProps => <PlaylistsContainer {...routerProps}/>} />
           <Route exact path="/signup" component={SignUpForm} />
+          <Route exact path="/login" component={LogInForm} />
+          <Route path='/playlists' render={routerProps => <PlaylistsContainer {...routerProps}/>} />
           <Route component={ErrorPage}/>
           </Switch>
         </Router>
