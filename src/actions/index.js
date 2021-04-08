@@ -28,7 +28,7 @@ export const createUser = (user, history) => {
 export const userLoggedIn = () => {
     const token = localStorage.getItem("token")
     if(token){
-        return dispathc => {
+        return dispatch => {
             fetch("/auto_login", {
                 headers:{
                     Authorization: `Bearer ${token}`
@@ -36,8 +36,8 @@ export const userLoggedIn = () => {
             })
             .then(r => r.json())
             .then(user => {
-                let user = {id: data.user.id, username: data.user.username}
-                dispatch({type: 'CREATE_USER', user})
+                let currentUser = {id: user.id, username: user.username}
+                dispatch({type: 'CREATE_USER', currentUser})
                 
             })
         }
