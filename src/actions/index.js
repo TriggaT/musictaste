@@ -18,7 +18,7 @@ export const createUser = (user, history) => {
             localStorage.setItem("token", data.jwt)
             
             let user = {id: data.user.id, username: data.user.username}
-            dispatch({type: 'CREATE_USER', user})
+            dispatch({type: 'SET_USER', user})
             history.push("/")
         })
     }
@@ -35,9 +35,9 @@ export const userLoggedIn = () => {
                 }
             })
             .then(r => r.json())
-            .then(user => {
-                let currentUser = {id: user.id, username: user.username}
-                dispatch({type: 'CREATE_USER', currentUser})
+            .then(data => {
+                let user = {id: data.id, username: data.username}
+                dispatch({type: 'SET_USER', user})
                 
             })
         }

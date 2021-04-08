@@ -4,7 +4,7 @@ const rootReducer = combineReducers({
     playlists: managePlaylist,
     songs: manageSongs,
     reviews: manageReviews,
-    users: manageUsers
+    currentUser: manageUsers
     // loading: manageLoad 
 });
   
@@ -58,9 +58,9 @@ function manageReviews(state = [], action){
     }
 }
 
-function manageUsers(state = [], action){
+function manageUsers(state = {}, action){
     switch(action.type) {
-        case "CREATE_USER":
+        case "SET_USER":
             return state = action.user 
         default:
             return state;
