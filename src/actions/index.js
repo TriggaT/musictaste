@@ -127,11 +127,12 @@ export const getReviews = () => {
     }
 }
 
-export const addReview = (review, id, history) => {
+export const addReview = (review, id, currentUserId, history) => {
     const reviewData = {
         rating: parseInt(review.rating), 
         text: review.text,
-        playlist_id: id
+        playlist_id: id,
+        user_id: currentUserId
     }
 
     console.log(reviewData)
