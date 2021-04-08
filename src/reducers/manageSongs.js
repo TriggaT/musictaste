@@ -13,7 +13,7 @@ export default rootReducer;
 function manageLoad(state = true, action){
     switch(action.type){
         case 'LOADING':
-            return state
+            return state = true  
         case "NOT_LOADING":
             return state = false 
         default:
