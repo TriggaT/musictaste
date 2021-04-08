@@ -8,7 +8,9 @@ class Playlist extends Component {
         const playlist = playlists.find(p => p.id === parseInt(match.params.playlistId));
 
         const associatedSongs = songs.filter(song => song.playlist_id === playlist.id);
-        const associatedReviews = reviews.filter(review => review.playlist_id === playlist.id);
+        const associatedReviews = reviews.filter(review => review.playlist.id === playlist.id);
+
+        
         
         return (
             <>
