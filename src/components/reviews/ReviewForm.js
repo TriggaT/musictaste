@@ -18,7 +18,7 @@ class ReviewForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        this.props.addReview(this.state, this.props.playlistId, this.props.history)
+        this.props.addReview(this.state, this.props.playlistId, this.props.currentUserId, this.props.history)
         this.setState({
             rating: "1",
             text:""
@@ -49,4 +49,4 @@ class ReviewForm extends Component {
     }
 }
 
-export default connect(null, {addReview})(ReviewForm)
+export default connect(((state) => ({currentUserId: state.currentUser.id})), {addReview})(ReviewForm)
