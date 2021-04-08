@@ -25,6 +25,24 @@ export const createUser = (user, history) => {
 
 }
 
+export const userLoggedIn = () => {
+    const token = localStorage.getItem("token")
+    if(token){
+        return dispathc => {
+            fetch("/auto_login", {
+                headers:{
+                    Authorization: `Bearer ${token}`
+                }
+            })
+            .then(r => r.json())
+            .then(user => {
+                console.log({id: user.id, username: user.username})
+            })
+        }
+    }
+
+}
+
 
 export const getPlaylists = () => {
     return dispatch => {
