@@ -6,6 +6,7 @@ export class Review extends Component {
         return (
             <>
                 <span>
+                <strong>{review.user.username}'s Taste</strong> <br /> 
                 <i>Review:</i> {review.text} <br />
                 <i>Rating:</i> {review.rating}  
                 </span> <br /> <br/>   
