@@ -16,7 +16,9 @@ export const createUser = (user, history) => {
         .then(r => r.json())
         .then(data => {
             localStorage.setItem("token", data.jwt)
-            dispatch({type: 'CREATE_USER', {id: data.user.id, username: data.user.username}})
+            
+            let user = {id: data.user.id, username: data.user.username}
+            dispatch({type: 'CREATE_USER', user})
             history.push("/")
         })
     }
