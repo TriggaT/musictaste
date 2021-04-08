@@ -13,7 +13,9 @@ class ReviewsContainer extends Component {
             for(let i = 0; i < arr.length; i++){
                 total += arr[i]
             }
-            return total/arr.length
+
+            let avg = total/arr.length
+            return Math.ceil(avg * 100)/100
         }
 
         return (
