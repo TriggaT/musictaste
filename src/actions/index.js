@@ -28,7 +28,7 @@ export const createUser = (user, history) => {
 export const logInUser = (user, history) => {
     const userData = {
         username: user.username, 
-        password_digest: user.password
+        password: user.password
     }
 
     return dispatch => {
@@ -47,12 +47,10 @@ export const logInUser = (user, history) => {
             }
             localStorage.setItem("token", data.jwt)
 
-            console.log(data)
-            
-            // let user = {id: data.user.id, username: data.user.username}
-            
-            // dispatch({type: 'LOGIN_USER', user})
-            // history.push("/playlists")
+            let user = {id: data.user.id, username: data.user.username}
+
+            dispatch({type: 'SET_USER', user})
+            history.push("/playlists")
         })
     }
 
