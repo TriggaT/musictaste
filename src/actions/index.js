@@ -57,10 +57,11 @@ export const getPlaylists = () => {
     }
 }
 
-export const addPlaylist = (playlist, history) => {
+export const addPlaylist = (playlist, id, history) => {
     const playlistData = {
         name: playlist.name, 
-        description: playlist.description
+        description: playlist.description,
+        user_id: id
     }
     
     return dispatch => {
