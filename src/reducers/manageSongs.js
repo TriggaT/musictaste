@@ -4,16 +4,18 @@ const rootReducer = combineReducers({
     playlists: managePlaylist,
     songs: manageSongs,
     reviews: manageReviews,
-    currentUser: manageUsers
-    // loading: manageLoad 
+    currentUser: manageUsers,
+    loading: manageLoad 
 });
   
 export default rootReducer;
 
-function manageLoad(state = false, action){
+function manageLoad(state = true, action){
     switch(action.type){
-        // case "NOT_LOADING":
-        //     return state = false 
+        case 'LOADING':
+            return state
+        case "NOT_LOADING":
+            return state = false 
         default:
             return state;
     }

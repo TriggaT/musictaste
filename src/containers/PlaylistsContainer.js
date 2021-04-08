@@ -17,11 +17,14 @@ export class PlaylistsContainer extends Component {
         this.props.getReviews()
         this.props.userLoggedIn()
     }
+    
 
     render() {
+         
         return (
             <div>
-                <ListPlaylists playlists={this.props.playlists} /> 
+                <h3>Playlists</h3>
+                <ListPlaylists playlists={this.props.playlists} loading={this.props.loading}/> 
                 <br />
                 <NavLink  to="/playlists/new">New Playlist</NavLink>
 
@@ -40,7 +43,8 @@ const mapStateToProps = (state) => {
         playlists: state.playlists,
         songs: state.songs,
         reviews: state.reviews,
-        currentUser: state.currentUser
+        currentUser: state.currentUser,
+        loading: state.loading
     }
 }
 

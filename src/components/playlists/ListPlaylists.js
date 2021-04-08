@@ -4,9 +4,14 @@ import { NavLink } from 'react-router-dom';
 class ListPlaylists extends Component {
     
     render() {
+        if(this.props.loading){
+            return (
+                <h4>Loading...</h4>
+
+            )
+        }
         return (
             <div>
-                <h3>Playlists</h3>
                 {this.props.playlists.map(playlist => 
                    <NavLink key={playlist.id} to={`/playlists/${playlist.id}`}>{playlist.name}</NavLink>)
                 } 

@@ -79,9 +79,11 @@ export const userLoggedIn = () => {
 
 export const getPlaylists = () => {
     return dispatch => {
+        dispatch({ type: 'LOADING'})
         fetch("/playlists")
         .then(r => r.json())
         .then(playlists => { 
+            dispatch({ type: 'NOT_LOADING'})
             dispatch({type: 'SET_PLAYLISTS', playlists})}
         )
         
