@@ -36,7 +36,9 @@ export const userLoggedIn = () => {
             })
             .then(r => r.json())
             .then(user => {
-                console.log({id: user.id, username: user.username})
+                let user = {id: data.user.id, username: data.user.username}
+                dispatch({type: 'CREATE_USER', user})
+                
             })
         }
     }
