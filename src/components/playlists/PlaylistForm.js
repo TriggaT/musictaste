@@ -16,7 +16,7 @@ class PlaylistForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        this.props.addPlaylist(this.state, this.props.history)
+        this.props.addPlaylist(this.state, this.props.currentUserId this.props.history)
         this.setState({
             name: "",
             description: ""
@@ -41,4 +41,4 @@ class PlaylistForm extends Component {
     }
 }
 
-export default connect(null, {addPlaylist})(PlaylistForm)
+export default connect(((state) => ({currentUserId: state.currentUser.id})), {addPlaylist})(PlaylistForm)
