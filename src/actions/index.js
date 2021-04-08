@@ -25,6 +25,39 @@ export const createUser = (user, history) => {
 
 }
 
+export const logInUser = (user, history) => {
+    const userData = {
+        username: user.username, 
+        password_digest: user.password
+    }
+
+    return dispatch => {
+        fetch("/login", {
+            method: "POST", 
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(userData)
+        })
+        .then(r => r.json())
+        .then(data => {
+            if (data.failure) {
+                alert(data.failure) 
+            }
+            localStorage.setItem("token", data.jwt)
+
+            console.log(data)
+            
+            // let user = {id: data.user.id, username: data.user.username}
+            
+            // dispatch({type: 'LOGIN_USER', user})
+            // history.push("/playlists")
+        })
+    }
+
+}
+
 export const userLoggedIn = () => {
     const token = localStorage.getItem("token")
     if(token){

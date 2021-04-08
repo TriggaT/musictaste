@@ -15,7 +15,7 @@ export class PlaylistsContainer extends Component {
         this.props.getPlaylists()
         this.props.getSongs()
         this.props.getReviews()
-        this.props.userLoggedIn()
+        // this.props.userLoggedIn()
     }
 
     render() {
