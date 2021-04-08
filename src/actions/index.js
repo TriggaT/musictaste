@@ -143,7 +143,7 @@ export const addSong = (song, id, history) => {
         .then(song => {
             console.log(song)
             dispatch({type: 'ADD_SONG', song})
-            history.push(`playlists/${id}`)
+            history.push(`/playlists/${id}`)
         })
     }
 }
@@ -181,7 +181,7 @@ export const addReview = (review, id, currentUserId, history) => {
         .then(review => {
             console.log(review)
             dispatch({type: 'ADD_REVIEW', review})
-            history.push(`playlists/${id}`)
+            history.push(`/playlists/${id}`)
         })
     }
 }
