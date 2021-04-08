@@ -14,12 +14,10 @@ export const createUser = (user, history) => {
             body: JSON.stringify(userData)
         })
         .then(r => r.json())
-        .then(user => {
-            localStorage.setItem("token", user.jwt)
-            console.log({id: user.id, username:user.username})
-            
-            // dispatch({type: 'CREATE_USER', user})
-            // history.push("/")
+        .then(data => {
+            localStorage.setItem("token", data.jwt)
+            dispatch({type: 'CREATE_USER', {id: data.user.id, username: data.user.username}})
+            history.push("/")
         })
     }
 
