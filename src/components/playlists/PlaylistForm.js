@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import {addPlaylist} from '../../actions/index'
 import {connect} from 'react-redux'
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 class PlaylistForm extends Component {
     state = {
@@ -29,11 +31,9 @@ class PlaylistForm extends Component {
             <div>
                 <br /> 
                 <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="name">Name:</label><br /> 
-                    <input name="name" type="text" value={this.state.name} onChange={this.handleChange}/><br /> 
-                    <label htmlFor="description">Description:</label> <br/ > 
-                    <input name="description" type="text" value={this.state.description} onChange={this.handleChange}/><br /><br />
-                    <input type="submit" value="Create Playlist" />
+                    <TextField id="standard-basic" name="name" label="Name" value={this.state.name} onChange={this.handleChange} /><br/> 
+                    <TextField id="standard-basic" name="description" label="Description" value={this.state.description} onChange={this.handleChange} /><br/> <br /> 
+                    <Button type="submit" variant="outlined" >Post Playlist</Button>
                 </form> 
                 
             </div>
