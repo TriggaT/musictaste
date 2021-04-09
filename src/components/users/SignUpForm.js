@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import {createUser} from '../../actions/index'
 import {connect} from 'react-redux'
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 export class SignUpForm extends Component {
     
@@ -23,12 +25,10 @@ export class SignUpForm extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="username">Username:</label>
-                    <input name="username" type="text" value={this.state.username} onChange={this.handleChange}/><br /> 
-                    <label htmlFor="password">Password:</label>
-                    <input name="password" type="password" value={this.state.password} onChange={this.handleChange}/><br />
-                    <input type="submit" value="Sign Up" />
+                <form onSubmit={this.handleSubmit}  >
+                    <TextField id="standard-basic" name="username" label="Username" value={this.state.username} onChange={this.handleChange} /><br/> 
+                    <TextField id="standard-password-input" name="password" type="password" label="Password" value={this.state.password} onChange={this.handleChange} /><br/> <br /> 
+                    <Button type="submit" variant="contained" >Sign Up</Button>
                 </form>
                 
             </div>
