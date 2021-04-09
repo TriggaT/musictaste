@@ -13,7 +13,7 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        <h1>MusicTaste</h1>
+        {/* <h1>MusicTaste</h1> */}
         <Router>
           <NavBar/>
           <Switch>
