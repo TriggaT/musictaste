@@ -6,6 +6,7 @@ import NavBar from './components/NavBar'
 import PlaylistsContainer from "./containers/PlaylistsContainer";
 import SignUpForm from "./components/users/SignUpForm";
 import LogInForm from "./components/users/LogInForm";
+import './App.css';
 
 
 class App extends Component {
