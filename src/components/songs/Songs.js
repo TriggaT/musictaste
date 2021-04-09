@@ -26,7 +26,7 @@ class Songs extends Component {
                     {songs.map(song =>
                     <div key={song.id} >
                         <Box display="flex" width={500} height={50} >
-                            <Box m="auto">
+                            <Box m="auto" bgcolor="lightgrey">
                                 <List >
                                 {generate(
                                     <ListItem  item="true"  >
