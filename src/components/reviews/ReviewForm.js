@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 import {addReview} from '../../actions/index'
 import {connect} from 'react-redux'
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+// import FormHelperText from '@material-ui/core/FormHelperText';
+// import FormControl from '@material-ui/core/FormControl';
+import TextField from '@material-ui/core/TextField';
+import Select from '@material-ui/core/Select';
+import Button from '@material-ui/core/Button';
 
 class ReviewForm extends Component {
     
@@ -32,17 +39,16 @@ class ReviewForm extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="rating">Rating:</label>
-                    <select name="rating" value={this.state.title} onChange={this.handleChange}>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select><br />
-                    <label htmlFor="reviewText">Review:</label> <br/> 
-                    <textarea name="text" value={this.state.artist} onChange={this.handleChange}/><br />
-                    <input type="submit" value="Post Review" />
+                    <InputLabel id="rating-label">Rating</InputLabel>
+                        <Select labelId="rating-label" name="rating" value={this.state.rating} onChange={this.handleChange}>
+                            <MenuItem value="1">1</MenuItem>
+                            <MenuItem value="2">2</MenuItem>
+                            <MenuItem value="3">3</MenuItem>
+                            <MenuItem value="4">4</MenuItem>
+                            <MenuItem value="5">5</MenuItem>
+                        </Select><br /> 
+                    <TextField  name="text" label="Review" placeholder="What taste does it leave in your ear?" multiline value={this.state.text} onChange={this.handleChange} /><br/> <br /> 
+                    <Button type="submit" variant="outlined" >Leave Your Taste</Button>
                 </form>
             </div>
         )
