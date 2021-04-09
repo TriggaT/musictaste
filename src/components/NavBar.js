@@ -10,10 +10,13 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 
 
+
 class NavBar extends Component {
     state = {
         anchorEl: null,
     }
+
+    
 
     
 
@@ -22,8 +25,9 @@ class NavBar extends Component {
         this.setState({ anchorEl: event.currentTarget });
     };
 
-    handleClose = () => {
-        console.log(this.props)
+    handleClose = (e) => {
+        // console.log(useHistory().push(e.target.outerText.toLowerCase()))
+        // (window.location.href=`/${e.target.outerText.toLowerCase()}`)
         this.setState({ anchorEl: null });
     };
 
@@ -40,7 +44,7 @@ class NavBar extends Component {
                 <NavLink to="/playlists">Playlists</NavLink> */}
                 <AppBar style={{ background: 'lightgrey' }} position="static">
                     <Toolbar>
-                        <IconButton edge="start"  color="lightgrey" aria-label="menu" onClick={this.handleClick} aria-owns={anchorEl ? 'simple-menu' : undefined} aria-haspopup="true">
+                        <IconButton edge="start" aria-label="menu" onClick={this.handleClick} aria-owns={anchorEl ? 'simple-menu' : undefined} aria-haspopup="true">
                         <MenuIcon />
                         </IconButton>
                         <Menu
@@ -50,10 +54,18 @@ class NavBar extends Component {
                             onClose={this.handleClose}
                             // onClose={handleClose}
                         >
-                        <MenuItem onClick={this.handleClose}>Home</MenuItem>
-                        <MenuItem onClick={this.handleClose}>Sign Up</MenuItem>
-                        <MenuItem onClick={this.handleClose}>Log In</MenuItem>
-                        <MenuItem onClick={this.handleClose}>Playlists</MenuItem>
+                        <NavLink to="/" style={{ textDecoration: 'none', color:'black'}}>
+                        <MenuItem >Home</MenuItem>
+                        </NavLink>
+                        <NavLink to="/signup" style={{ textDecoration: 'none', color:'black'}}>
+                        <MenuItem>SignUp</MenuItem>
+                        </NavLink>
+                        <NavLink to="/login" style={{ textDecoration: 'none', color:'black'}}>
+                        <MenuItem>LogIn</MenuItem>
+                        </NavLink>
+                        <NavLink to="/playlists" style={{ textDecoration: 'none', color:'black'}}>
+                        <MenuItem>Playlists</MenuItem>
+                        </NavLink>
                         </Menu>
                         <Typography variant="h6" >
                         MusicTaste
