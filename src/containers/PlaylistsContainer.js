@@ -24,7 +24,7 @@ export class PlaylistsContainer extends Component {
         return (
             <div>
                 <h3>Playlists</h3>
-                <ListPlaylists playlists={this.props.playlists} loading={this.props.loading}/> 
+                <ListPlaylists playlists={this.props.playlists} loading={this.props.loading} history={this.props.history} /> 
                 <br />
                 <NavLink  to="/playlists/new">New Playlist</NavLink>
 
