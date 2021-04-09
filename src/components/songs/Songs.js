@@ -22,14 +22,14 @@ class Songs extends Component {
         return (
             <div>
                 <h3>Songs</h3>
-                <GridList item xs={3} cols={5} spacing={2}  >
+                <GridList  cols={5} spacing={2}  >
                     {songs.map(song =>
-                    <div >
+                    <div key={song.id} >
                         <Box display="flex" width={500} height={50} >
                             <Box m="auto">
                                 <List >
                                 {generate(
-                                    <ListItem  >
+                                    <ListItem  item="true"  >
                                         <ListItemText primary={`Title: ${song.title}`} secondary={`Artist: ${song.artist}`}/>
                                     </ListItem>,
                                 )}
