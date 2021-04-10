@@ -26,11 +26,11 @@ class Songs extends Component {
                     {songs.map(song =>
                     <div key={song.id} >
                         <Box display="flex" width={500} height={50} >
-                            <Box m="auto" bgcolor="lightgrey">
+                            <Box m="auto" bgcolor="whitesmoke" >
                                 <List >
                                 {generate(
                                     <ListItem  item="true"  >
-                                        <ListItemText primary={`Title: ${song.title}`} secondary={`Artist: ${song.artist}`}/>
+                                        <ListItemText id="songInfo"  primary={`Title: ${song.title}`} secondary={`Artist: ${song.artist}`}/>
                                     </ListItem>,
                                 )}
                                 </List>
