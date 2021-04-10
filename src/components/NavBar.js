@@ -16,18 +16,11 @@ class NavBar extends Component {
         anchorEl: null,
     }
 
-    
-
-    
-
-
     handleClick = (event) => {
         this.setState({ anchorEl: event.currentTarget });
     };
 
     handleClose = (e) => {
-        // console.log(useHistory().push(e.target.outerText.toLowerCase()))
-        // (window.location.href=`/${e.target.outerText.toLowerCase()}`)
         this.setState({ anchorEl: null });
     };
 
@@ -38,10 +31,6 @@ class NavBar extends Component {
         
         return (
             <div>
-                {/* <NavLink to="/">Home</NavLink>
-                <NavLink to="/signup">Sign Up</NavLink>
-                <NavLink to="/login">LogIn</NavLink>
-                <NavLink to="/playlists">Playlists</NavLink> */}
                 <AppBar style={{ background: 'lightgrey' }} position="static">
                     <Toolbar>
                         <IconButton edge="start" aria-label="menu" onClick={this.handleClick} aria-owns={anchorEl ? 'simple-menu' : undefined} aria-haspopup="true">
@@ -52,19 +41,18 @@ class NavBar extends Component {
                             anchorEl={anchorEl}
                             open={Boolean(anchorEl)}
                             onClose={this.handleClose}
-                            // onClose={handleClose}
                         >
                         <NavLink to="/" style={{ textDecoration: 'none', color:'black'}}>
-                        <MenuItem >Home</MenuItem>
+                        <MenuItem onClick={this.handleClose}>Home</MenuItem>
                         </NavLink>
                         <NavLink to="/signup" style={{ textDecoration: 'none', color:'black'}}>
-                        <MenuItem>SignUp</MenuItem>
+                        <MenuItem onClick={this.handleClose}>SignUp</MenuItem>
                         </NavLink>
                         <NavLink to="/login" style={{ textDecoration: 'none', color:'black'}}>
-                        <MenuItem>LogIn</MenuItem>
+                        <MenuItem onClick={this.handleClose}>LogIn</MenuItem>
                         </NavLink>
                         <NavLink to="/playlists" style={{ textDecoration: 'none', color:'black'}}>
-                        <MenuItem>Playlists</MenuItem>
+                        <MenuItem onClick={this.handleClose}>Playlists</MenuItem>
                         </NavLink>
                         </Menu>
                         <Typography variant="h6" >
