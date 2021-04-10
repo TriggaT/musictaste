@@ -1,6 +1,16 @@
 import React, { Component } from 'react'
+import {logOutUser} from '../../actions/index'
+import { withRouter} from "react-router-dom"
+import {connect} from 'react-redux'
+
 
 export class LogButton extends Component {
+
+    handleLogOut = e => {
+        this.props.logOutUser(this.props.history)
+    }
+
+
     render() {
         if(this.props.currentUser === {}){
             return (
@@ -9,14 +19,13 @@ export class LogButton extends Component {
                 </>
             )
         }
-        
         return (
             <>
-                <Button onClick={this.handleLogOut} color="inherit">LogIn</Button>
+                <Button onClick={() => this.props.history.push('/login')} color="inherit">LogIn</Button>
                 
             </>
         )
     }
 }
 
-export default LogButton
+export default connect((state => ({currentUser: state.currentUser})),{logOutUser})(withRouter(LogButton))
