@@ -10,7 +10,7 @@ import Button from '@material-ui/core/Button';
 
 class Songs extends Component {
     render() {
-        const { songs, match } = this.props; 
+        const { songs, match, history } = this.props; 
         
         function generate(element) {
             return [1].map((value) =>
@@ -40,7 +40,7 @@ class Songs extends Component {
                     </div>
                     )}
                 </GridList>
-                <Button  onClick={() => this.props.history.push(`${match.url}/songs/new`)}variant="contained">
+                <Button  onClick={() => history.push(`${match.url}/songs/new`)}variant="contained">
                 Add New Song
                 </Button> 
             </div>

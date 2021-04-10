@@ -10,7 +10,7 @@ class Playlist extends Component {
     }
 
     render() {
-        const {playlists, match, songs, reviews} = this.props;
+        const {playlists, match, songs, reviews, history} = this.props;
         const playlist = playlists.find(p => p.id === parseInt(match.params.playlistId));
 
         const associatedSongs = songs.filter(song => song.playlist_id === playlist.id);
@@ -23,8 +23,8 @@ class Playlist extends Component {
                 <>
                 <h3>{playlist.name} created by {playlist.user.username} </h3>
                 <h4>{playlist.description}</h4>
-                <SongsContainer songs={associatedSongs} playlistId={playlist.id} match={match}/> 
-                <ReviewsContainer reviews={associatedReviews} playlistId={playlist.id} match={match}/>
+                <SongsContainer songs={associatedSongs} playlistId={playlist.id} match={match} history={history}/> 
+                <ReviewsContainer reviews={associatedReviews} playlistId={playlist.id} history={history} match={match}/>
 
                 </>
             )
