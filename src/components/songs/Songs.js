@@ -6,6 +6,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import GridList from "@material-ui/core/GridList";
 import { Box } from '@material-ui/core'
+import Button from '@material-ui/core/Button';
 
 class Songs extends Component {
     render() {
@@ -39,7 +40,9 @@ class Songs extends Component {
                     </div>
                     )}
                 </GridList>
-                <NavLink to={`${match.url}/songs/new`}>Add New Song</NavLink> 
+                <Button  onClick={() => this.props.history.push(`${match.url}/songs/new`)}variant="contained">
+                Add New Song
+                </Button> 
             </div>
         )
     }
