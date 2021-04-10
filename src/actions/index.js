@@ -56,6 +56,19 @@ export const logInUser = (user, history) => {
 
 }
 
+export const logOutUser = (history) => {
+
+    return dispatch => {
+        console.log(localStorage.getItem("token"))
+        localStorage.removeItem("token")
+        dispatch({type: 'REMOVE_USER'}) 
+        console.log(localStorage.getItem("token"))
+        history.push("/login")
+    }
+
+}
+
+
 export const userLoggedIn = () => {
     const token = localStorage.getItem("token")
     if(token){
