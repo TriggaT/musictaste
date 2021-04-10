@@ -33,7 +33,7 @@ class PlaylistForm extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <TextField id="standard-basic" name="name" label="Name" value={this.state.name} onChange={this.handleChange} /><br/> 
                     <TextField id="standard-basic" name="description" label="Description" value={this.state.description} onChange={this.handleChange} /><br/> <br /> 
-                    <Button type="submit" variant="outlined" >Post Playlist</Button>
+                    <Button type="submit" variant="contained" >Post Playlist</Button>
                 </form> 
                 
             </div>

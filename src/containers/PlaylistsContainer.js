@@ -24,7 +24,7 @@ export class PlaylistsContainer extends Component {
          
         return (
             <div>
-                <h3>Playlists</h3>
+                <h2>Playlists</h2>
                 <ListPlaylists playlists={this.props.playlists} loading={this.props.loading} history={this.props.history} /> 
                 <br />
                 <Button  onClick={() => this.props.history.push("/playlists/new")}variant="contained">
