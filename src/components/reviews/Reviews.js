@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 
 export class Reviews extends Component {
     render() {
-        const { reviews, match  } = this.props;
+        const { reviews, match, history } = this.props;
 
 
         return (
@@ -17,9 +17,9 @@ export class Reviews extends Component {
                     )
                 })}
 
-                <Button  onClick={() => this.props.history.push(`${match.url}/reviews/new`)} variant="contained">
+                <Button  onClick={() => history.push(`${match.url}/reviews/new`)} variant="contained">
                 Add Your Review
-                </Button> 
+                </Button> <br /> <br/> 
                 
             </div>
         )
