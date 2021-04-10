@@ -19,6 +19,7 @@ class App extends Component {
           <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/signup" component={SignUpForm} />
+          <Route exact path="/logout" component={LogInForm} />
           <Route exact path="/login" component={LogInForm} />
           <Route path='/playlists' render={routerProps => <PlaylistsContainer {...routerProps}/>} />
           <Route component={ErrorPage}/>

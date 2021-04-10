@@ -8,6 +8,8 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import { withRouter} from "react-router-dom"
+import {connect} from 'react-redux'
 
 
 
@@ -58,7 +60,7 @@ class NavBar extends Component {
                         <Typography variant="h6" >
                         MusicTaste
                         </Typography>
-                        {/* <Button color="inherit">Login</Button> */}
+                        <Button onClick={() => this.props.history.push('/logout')} color="inherit">LogOut</Button>
                     </Toolbar>
                 </AppBar>
                 
@@ -67,4 +69,4 @@ class NavBar extends Component {
     }
 }
 
-export default NavBar
+export default connect(state => ({currentUser: state.currentUser}))(withRouter(NavBar))
