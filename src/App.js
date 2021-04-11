@@ -1,6 +1,7 @@
 import React, {Component} from "react"
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import ErrorPage from "./components/ErrorPage";
+import Footer from "./components/Footer";
 import Home from "./components/Home";
 import NavBar from './components/NavBar'
 import PlaylistsContainer from "./containers/PlaylistsContainer";
@@ -25,6 +26,7 @@ class App extends Component {
           <Route component={ErrorPage}/>
           </Switch>
         </Router>
+        <Footer /> 
         
       </div>
     );
