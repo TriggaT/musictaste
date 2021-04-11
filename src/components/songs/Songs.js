@@ -26,8 +26,8 @@ class Songs extends Component {
                 <GridList  cols={5} spacing={2}  >
                     {songs.map(song =>
                     <div key={song.id} >
-                        <Box display="flex" width={500} height={50} >
-                            <Box m="auto" bgcolor="whitesmoke" >
+                        <Box display="flex" width={525} >
+                            <Box m="auto" bgcolor="whitesmoke" borderRadius="50%">
                                 <List >
                                 {generate(
                                     <ListItem  item="true"  >
