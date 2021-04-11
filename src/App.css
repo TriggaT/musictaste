@@ -52,3 +52,8 @@
   height:25px;
   text-align: left;
 }
+
+div.logButton {
+  right:0;
+  position: absolute;
+}

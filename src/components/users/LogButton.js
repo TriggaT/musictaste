@@ -17,19 +17,19 @@ export class LogButton extends Component {
         
         if(JSON.stringify(this.props.currentUser) === "{}"){
             return (
-                <>
+                <div className="logButton">
                 {console.log(!!this.props.currentUser)}
                     <Button onClick={this.handleLogIn} color="inherit">LogIn</Button>
-                </>
+                </div>
             )
         }
         
         return (
-            <>
+            <div className="logButton">
             {console.log(JSON.stringify(this.props.currentUser) === "{}")}
                 <Button onClick={this.handleLogOut} color="inherit">LogOut</Button>
                 
-            </>
+            </div>
         )
     }
 }
