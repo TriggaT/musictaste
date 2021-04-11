@@ -26,6 +26,7 @@ class App extends Component {
           <Route component={ErrorPage}/>
           </Switch>
         </Router>
+        <br /> 
         <Footer /> 
         
       </div>
