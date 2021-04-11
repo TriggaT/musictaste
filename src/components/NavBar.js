@@ -11,6 +11,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import { withRouter} from "react-router-dom"
 import {connect} from 'react-redux'
 import {logOutUser} from '../actions/index'
+import { LogButton } from './users/LogButton';
 
 
 
@@ -26,10 +27,6 @@ class NavBar extends Component {
     handleClose = (e) => {
         this.setState({ anchorEl: null });
     };
-
-    handleLogOut = e => {
-        this.props.logOutUser(this.props.history)
-    }
 
     
     render() {
@@ -65,7 +62,7 @@ class NavBar extends Component {
                         <Typography variant="h6" >
                         MusicTaste
                         </Typography>
-                        <Button onClick={this.handleLogOut} color="inherit">LogOut</Button>
+                        <LogButton history={this.props.history} />
                     </Toolbar>
                 </AppBar>
                 

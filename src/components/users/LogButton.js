@@ -2,12 +2,17 @@ import React, { Component } from 'react'
 import {logOutUser} from '../../actions/index'
 import { withRouter} from "react-router-dom"
 import {connect} from 'react-redux'
+import Button from '@material-ui/core/Button';
 
 
 export class LogButton extends Component {
 
     handleLogOut = e => {
         this.props.logOutUser(this.props.history)
+    }
+
+    handleLogIn = e => {
+        this.props.history.push('/login')
     }
 
 
@@ -21,7 +26,7 @@ export class LogButton extends Component {
         }
         return (
             <>
-                <Button onClick={() => this.props.history.push('/login')} color="inherit">LogIn</Button>
+                <Button onClick={this.handleLogIn} color="inherit">LogIn</Button>
                 
             </>
         )
