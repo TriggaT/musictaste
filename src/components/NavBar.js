@@ -65,6 +65,9 @@ class NavBar extends Component {
                         <NavLink to="/playlists" style={{ textDecoration: 'none', color:'black'}}>
                         <MenuItem onClick={this.handleClose}>Playlists</MenuItem>
                         </NavLink>
+                        <NavLink to="/contact" style={{ textDecoration: 'none', color:'black'}}>
+                        <MenuItem onClick={this.handleClose}>Contact</MenuItem>
+                        </NavLink>
                         </Menu>
                         <Typography variant="h6" >
                         MusicTaste

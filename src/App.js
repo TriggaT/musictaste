@@ -4,6 +4,7 @@ import ErrorPage from "./components/ErrorPage";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import About from "./components/About";
+import Contact from "./components/Contact";
 import NavBar from './components/NavBar'
 import PlaylistsContainer from "./containers/PlaylistsContainer";
 import SignUpForm from "./components/users/SignUpForm";
@@ -21,6 +22,7 @@ class App extends Component {
           <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
+          <Route exact path="/contact" component={Contact} />
           <Route exact path="/signup" component={SignUpForm} />
           <Route exact path="/logout" component={LogInForm} />
           <Route exact path="/login" component={LogInForm} />
