@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import ErrorPage from "./components/ErrorPage";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
+import About from "./components/About";
 import NavBar from './components/NavBar'
 import PlaylistsContainer from "./containers/PlaylistsContainer";
 import SignUpForm from "./components/users/SignUpForm";
@@ -19,6 +20,7 @@ class App extends Component {
           <NavBar/>
           <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/about" component={About} />
           <Route exact path="/signup" component={SignUpForm} />
           <Route exact path="/logout" component={LogInForm} />
           <Route exact path="/login" component={LogInForm} />
@@ -26,7 +28,7 @@ class App extends Component {
           <Route component={ErrorPage}/>
           </Switch>
         </Router>
-        <br /> 
+        <br /> <br /> 
         <Footer /> 
         
       </div>

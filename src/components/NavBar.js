@@ -53,6 +53,9 @@ class NavBar extends Component {
                         <NavLink to="/" style={{ textDecoration: 'none', color:'black'}}>
                         <MenuItem onClick={this.handleClose}>Home</MenuItem>
                         </NavLink>
+                        <NavLink to="/about" style={{ textDecoration: 'none', color:'black'}}>
+                        <MenuItem onClick={this.handleClose}>About</MenuItem>
+                        </NavLink>
                         <NavLink to="/signup" style={{ textDecoration: 'none', color:'black'}}>
                         <MenuItem onClick={this.handleClose}>SignUp</MenuItem>
                         </NavLink>
