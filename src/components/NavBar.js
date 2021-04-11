@@ -10,12 +10,16 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { withRouter} from "react-router-dom"
 import {connect} from 'react-redux'
-import {logOutUser} from '../actions/index'
+import {logOutUser, getPlaylists, userLoggedIn} from '../actions/index'
 import { LogButton } from './users/LogButton';
 
 
 
 class NavBar extends Component {
+    componentDidMount = () => {
+        this.props.getPlaylists()
+        this.props.userLoggedIn()
+    }
     state = {
         anchorEl: null,
     }
@@ -62,7 +66,7 @@ class NavBar extends Component {
                         <Typography variant="h6" >
                         MusicTaste
                         </Typography>
-                        <LogButton history={this.props.history} />
+                        <LogButton history={this.props.history} currentUser={this.props.currentUser} logOutUser={this.props.logOutUser}/>
                     </Toolbar>
                 </AppBar>
                 
@@ -71,4 +75,4 @@ class NavBar extends Component {
     }
 }
 
-export default connect((state => ({currentUser: state.currentUser})),{logOutUser})(withRouter(NavBar))
+export default connect((state => ({currentUser: state.currentUser})),{logOutUser, getPlaylists, userLoggedIn})(withRouter(NavBar))

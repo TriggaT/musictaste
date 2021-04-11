@@ -86,6 +86,10 @@ export const userLoggedIn = () => {
             })
         }
     }
+    return dispatch => {
+        dispatch({type: 'REMOVE_USER'}) 
+    } 
+    
 
 }
 
