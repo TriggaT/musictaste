@@ -8,8 +8,6 @@ export class Reviews extends Component {
     render() {
         const { reviews, match, history, currentUser, playlistUserId } = this.props;
 
-        console.log(playlistUserId)
-
         const renderReviewButton = () => {
             if(JSON.stringify(currentUser) !== "{}" && currentUser.id !== playlistUserId){
                 return  (
