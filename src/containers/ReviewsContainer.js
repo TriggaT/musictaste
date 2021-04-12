@@ -6,7 +6,7 @@ import ReviewForm from '../components/reviews/ReviewForm'
 
 class ReviewsContainer extends Component {
     render() {
-        const { reviews, playlistId, match, history } = this.props; 
+        const { reviews, playlistId, match, history, currentUser } = this.props; 
 
         const average = (arr) => {
             let total = 0;
@@ -21,7 +21,7 @@ class ReviewsContainer extends Component {
         return (
             <div>
                 <h4>Average Rating: {average(reviews.map(r => r.rating))} </h4>
-                <Reviews reviews={reviews} match={match} history={history} /> 
+                <Reviews currentUser={currentUser} reviews={reviews} match={match} history={history} /> 
                 
                 <Route path={`/playlists/${playlistId}/reviews/new`} render={routerProps => <ReviewForm {...routerProps} playlistId={playlistId} /> }/> 
 
