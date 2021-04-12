@@ -8,8 +8,10 @@ export class Reviews extends Component {
     render() {
         const { reviews, match, history, currentUser, playlistUserId } = this.props;
 
+        console.log(playlistUserId)
+
         const renderReviewButton = () => {
-            if(JSON.stringify(currentUser) !== "{}"){
+            if(JSON.stringify(currentUser) !== "{}" && currentUser.id !== playlistUserId){
                 return  (
                     <Button  onClick={() => history.push(`${match.url}/reviews/new`)} variant="contained">
                     Add Your Review
