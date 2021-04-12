@@ -6,10 +6,10 @@ import Button from '@material-ui/core/Button';
 
 export class Reviews extends Component {
     render() {
-        const { reviews, match, history, currentUser } = this.props;
+        const { reviews, match, history, currentUser, playlistUserId } = this.props;
 
         const renderReviewButton = () => {
-            if(JSON.stringify(this.props.currentUser) !== "{}"){
+            if(JSON.stringify(currentUser) !== "{}"){
                 return  (
                     <Button  onClick={() => history.push(`${match.url}/reviews/new`)} variant="contained">
                     Add Your Review
