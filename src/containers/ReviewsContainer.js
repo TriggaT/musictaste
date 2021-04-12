@@ -15,7 +15,8 @@ class ReviewsContainer extends Component {
             }
 
             let avg = total/arr.length
-            return Math.ceil(avg * 100)/100
+            let roundAvg = Math.ceil(avg * 100)/100
+            return roundAvg ? roundAvg : "No current reviews. Be the first to review! "
         }
 
         return (
