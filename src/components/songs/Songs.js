@@ -19,6 +19,17 @@ class Songs extends Component {
             }),
             );
         }
+
+        const renderSongButton = () => {
+            if(JSON.stringify(this.props.currentUser) !== "{}"){
+                return  (
+                    <Button  onClick={() => history.push(`${match.url}/songs/new`)}variant="contained">
+                    Add New Song
+                    </Button> 
+                )
+
+            }
+        }
             
         return (
             <div>
@@ -40,9 +51,7 @@ class Songs extends Component {
                     </div>
                     )}
                 </GridList>
-                <Button  onClick={() => history.push(`${match.url}/songs/new`)}variant="contained">
-                Add New Song
-                </Button> 
+                {renderSongButton()}
             </div>
         )
     }
