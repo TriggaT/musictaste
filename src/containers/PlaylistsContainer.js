@@ -21,15 +21,25 @@ export class PlaylistsContainer extends Component {
     
 
     render() {
+
+        const renderPlaylistButton = () => {
+            if(JSON.stringify(this.props.currentUser) !== "{}"){
+                return  (
+                <Button  onClick={() => this.props.history.push("/playlists/new")}variant="contained">
+                New Playlist
+                </Button> 
+                )
+
+            }
+        }
          
         return (
             <div>
                 <h2>Playlists</h2>
                 <ListPlaylists playlists={this.props.playlists} loading={this.props.loading} history={this.props.history} /> 
                 <br />
-                <Button  onClick={() => this.props.history.push("/playlists/new")}variant="contained">
-                New Playlist
-                </Button> 
+                {renderPlaylistButton()}
+            
 
                 <Switch>
                 <Route path="/playlists/new" component={PlaylistForm} />
