@@ -10,7 +10,7 @@ import Button from '@material-ui/core/Button';
 
 class Songs extends Component {
     render() {
-        const { songs, match, history } = this.props; 
+        const { songs, match, history, currentUser, playlistUserId } = this.props; 
         
         function generate(element) {
             return [1].map((value) =>
@@ -21,10 +21,10 @@ class Songs extends Component {
         }
 
         const renderSongButton = () => {
-            if(JSON.stringify(this.props.currentUser) !== "{}"){
+            if(currentUser.id === playlistUserId){
                 return  (
                     <Button  onClick={() => history.push(`${match.url}/songs/new`)}variant="contained">
-                    Add New Song
+                    Add Song
                     </Button> 
                 )
 

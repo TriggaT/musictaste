@@ -23,7 +23,7 @@ class Playlist extends Component {
                 <>
                 <h3>{playlist.name} created by {playlist.user.username} </h3>
                 <h4>{playlist.description}</h4>
-                <SongsContainer songs={associatedSongs} playlistId={playlist.id} match={match} history={history}/> 
+                <SongsContainer songs={associatedSongs} playlistId={playlist.id} currentUser={currentUser} playlistUserId={playlist.user.id} match={match} history={history}/> 
                 <ReviewsContainer reviews={associatedReviews} playlistId={playlist.id} history={history} currentUser={currentUser} match={match}/>
 
                 </>
