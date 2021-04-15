@@ -5,9 +5,6 @@ import {getPlaylists} from '../../actions/index'
 import {connect} from 'react-redux'
 
 class Playlist extends Component {
-    componentDidMount = () => {
-        this.props.getPlaylists()
-    }
 
     render() {
         const {playlists, match, songs, reviews, history, currentUser} = this.props;
