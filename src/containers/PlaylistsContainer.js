@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import {getPlaylists} from '../actions/index'
-import {getSongs, userLoggedIn} from '../actions/index'
-import {getReviews} from '../actions/index'
+import {getPlaylists, getSongs, getReviews} from '../actions/index'
 import {Switch, Route} from 'react-router-dom';
 import Playlist from "../components/playlists/Playlist"
 import ListPlaylists from "../components/playlists/ListPlaylists"
@@ -28,7 +26,6 @@ export class PlaylistsContainer extends Component {
                 New Playlist
                 </Button> 
                 )
-
             }
         }
          
@@ -39,12 +36,10 @@ export class PlaylistsContainer extends Component {
                 <br />
                 {renderPlaylistButton()}
             
-
                 <Switch>
                 <Route path="/playlists/new" component={PlaylistForm} />
                 <Route path={`${match.url}/:playlistId`} render={routerProps => <Playlist {...routerProps}  playlists={playlists} songs={songs} reviews={reviews} /> }/>
                 </Switch>
-
             </div>
         )
     }
