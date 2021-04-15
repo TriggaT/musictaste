@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Review from '../reviews/Review'
-import {NavLink } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
 
