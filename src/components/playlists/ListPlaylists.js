@@ -5,15 +5,12 @@ import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-import {setPlaylist} from '../../actions/index'
-import {connect} from 'react-redux'
 
 class ListPlaylists extends Component {
 
     handleClick = (e) => {
         const playlist = this.props.playlists.find(playlist => playlist.name === e.target.outerText)
         this.props.history.push(`/playlists/${playlist.id}`)
-        this.props.setPlaylist(playlist.id)
     }
     
     render() {
@@ -48,4 +45,4 @@ class ListPlaylists extends Component {
 
 
 
-export default connect(null, {setPlaylist})(ListPlaylists)
+export default ListPlaylists

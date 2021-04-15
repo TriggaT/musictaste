@@ -21,7 +21,6 @@ class Playlist extends Component {
                 <h4>{playlist.description}</h4>
                 <SongsContainer songs={associatedSongs} playlistId={playlist.id} currentUser={currentUser} playlistUserId={playlist.user.id} match={match} history={history}/> 
                 <ReviewsContainer reviews={associatedReviews} playlistId={playlist.id} history={history} currentUser={currentUser} playlistUserId={playlist.user.id} match={match}/>
-
                 </>
             )
         }
