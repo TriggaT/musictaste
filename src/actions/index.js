@@ -19,7 +19,8 @@ export const createUser = (user, history) => {
             
             let user = {id: data.user.id, username: data.user.username}
             dispatch({type: 'SET_USER', user})
-            history.push("/playlists")
+            alert("Thanks for signing up! We look forward to your MusicTaste.")
+            history.push("/")
         })
     }
 
@@ -50,7 +51,7 @@ export const logInUser = (user, history) => {
             let user = {id: data.user.id, username: data.user.username}
 
             dispatch({type: 'SET_USER', user})
-            history.push("/playlists")
+            history.push("/")
         })
     }
 
@@ -59,10 +60,8 @@ export const logInUser = (user, history) => {
 export const logOutUser = (history) => {
 
     return dispatch => {
-        console.log(localStorage.getItem("token"))
         localStorage.removeItem("token")
         dispatch({type: 'REMOVE_USER'}) 
-        console.log(localStorage.getItem("token"))
         history.push("/login")
     }
 
@@ -71,6 +70,7 @@ export const logOutUser = (history) => {
 
 export const userLoggedIn = () => {
     const token = localStorage.getItem("token")
+    
     if(token){
         return dispatch => {
             fetch("/auto_login", {
@@ -86,6 +86,7 @@ export const userLoggedIn = () => {
             })
         }
     }
+    
     return dispatch => {
         dispatch({type: 'REMOVE_USER'}) 
     } 
@@ -102,8 +103,7 @@ export const getPlaylists = () => {
         .then(playlists => { 
             dispatch({ type: 'NOT_LOADING'})
             dispatch({type: 'SET_PLAYLISTS', playlists})}
-        )
-        
+        )   
     }
 }
 
@@ -133,7 +133,7 @@ export const addPlaylist = (playlist, id, history) => {
 
 export const getSongs = () => {
     return dispatch => {
-        // dispatch({ type: 'LOADING_SONGS'})
+        dispatch({ type: 'LOADING'})
         fetch("/songs")
         .then(r => r.json())
         .then(songs => {
@@ -160,7 +160,6 @@ export const addSong = (song, id, history) => {
         })
         .then(r => r.json())
         .then(song => {
-            console.log(song)
             dispatch({type: 'ADD_SONG', song})
             history.push(`/playlists/${id}`)
         })
@@ -185,8 +184,6 @@ export const addReview = (review, id, currentUserId, history) => {
         user_id: currentUserId
     }
 
-    console.log(reviewData)
-
     return dispatch => {
         fetch("/reviews", {
             method: "POST", 
@@ -198,7 +195,6 @@ export const addReview = (review, id, currentUserId, history) => {
         })
         .then(r => r.json())
         .then(review => {
-            console.log(review)
             dispatch({type: 'ADD_REVIEW', review})
             history.push(`/playlists/${id}`)
         })
