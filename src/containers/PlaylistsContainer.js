@@ -17,7 +17,7 @@ export class PlaylistsContainer extends Component {
     
 
     render() {
-        const {playlists, match, songs, reviews, history, currentUser, loading} = this.props;
+        const {playlists, match, history, currentUser, loading} = this.props;
 
         const renderPlaylistButton = () => {
             if(JSON.stringify(currentUser) !== "{}"){
@@ -38,7 +38,7 @@ export class PlaylistsContainer extends Component {
             
                 <Switch>
                 <Route path="/playlists/new" component={PlaylistForm} />
-                <Route path={`${match.url}/:playlistId`} render={routerProps => <Playlist {...routerProps}  playlists={playlists} songs={songs} reviews={reviews} /> }/>
+                <Route path={`${match.url}/:playlistId`} render={routerProps => <Playlist {...routerProps} /> }/>
                 </Switch>
             </div>
         )
@@ -48,8 +48,6 @@ export class PlaylistsContainer extends Component {
 const mapStateToProps = (state) => {
     return {
         playlists: state.playlists,
-        songs: state.songs,
-        reviews: state.reviews,
         currentUser: state.currentUser,
         loading: state.loading
     }
