@@ -46,7 +46,7 @@ class ReviewForm extends Component {
                             <MenuItem value="5">5</MenuItem>
                         </Select><br /> 
                     <TextField  name="text" label="Review" placeholder="What taste does it leave in your ear?" multiline value={this.state.text} onChange={this.handleChange} /><br/> <br /> 
-                    <Button type="submit" variant="outlined" >Leave Your Taste</Button>
+                    <Button type="submit" variant="contained" >Leave Your Taste</Button>
                 </form>
             </div>
         )

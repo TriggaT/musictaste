@@ -32,7 +32,7 @@ class SongForm extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <TextField id="standard-basic" name="title" label="Title" value={this.state.title} onChange={this.handleChange} /><br/> 
                     <TextField id="standard-basic" name="artist" label="Artist" value={this.state.artist} onChange={this.handleChange} /><br/> <br /> 
-                    <Button type="submit" variant="outlined" >Add Song</Button>
+                    <Button type="submit" variant="contained" >Post Song</Button>
                 </form>
             </div>
         )
