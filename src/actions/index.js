@@ -168,6 +168,7 @@ export const addSong = (song, id, history) => {
 
 export const getReviews = () => {
     return dispatch => {
+        dispatch({ type: 'LOADING'})
         fetch("/reviews")
         .then(r => r.json())
         .then(reviews => {
