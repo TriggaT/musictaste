@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
 import SongsContainer from "../../containers/SongsContainer";
 import ReviewsContainer from "../../containers/ReviewsContainer";
-import {getPlaylists} from '../../actions/index'
 import {connect} from 'react-redux'
 
 class Playlist extends Component {
 
     render() {
         const {playlists, match, songs, reviews, history, currentUser} = this.props;
+        
         const playlist = playlists.find(p => p.id === parseInt(match.params.playlistId));
-
         const associatedSongs = songs.filter(song => song.playlist_id === playlist.id);
         const associatedReviews = reviews.filter(review => review.playlist.id === playlist.id);
 
@@ -37,9 +36,10 @@ class Playlist extends Component {
 const mapStateToProps = (state) => {
     return {
         playlists: state.playlists,
-        currentUser: state.currentUser,
-        loading: state.loading
+        reviews: state.reviews, 
+        songs: state.songs, 
+        currentUser: state.currentUser
     }
 }
 
-export default connect(mapStateToProps, {getPlaylists})(Playlist)
+export default connect(mapStateToProps)(Playlist)
