@@ -14,7 +14,9 @@ class ListPlaylists extends Component {
     }
     
     render() {
-        if(this.props.loading){
+        const {playlists, loading} = this.props;
+
+        if(loading){
             return (
                 <h4>Loading...</h4>
 
@@ -23,7 +25,7 @@ class ListPlaylists extends Component {
         return (
             <div className="gridList">
                 <GridList cellHeight={50} spacing={20}  cols={3} >
-                    {this.props.playlists.map(playlist => 
+                    {playlists.map(playlist => 
                     <GridListTile key={playlist.id} >
                         <Card onClick={this.handleClick}>
                         <CardActionArea >
