@@ -7,7 +7,6 @@ import Playlist from "../components/playlists/Playlist"
 import ListPlaylists from "../components/playlists/ListPlaylists"
 import {connect} from 'react-redux'
 import PlaylistForm from '../components/playlists/PlaylistForm';
-import { NavLink } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
 
@@ -16,16 +15,16 @@ export class PlaylistsContainer extends Component {
         this.props.getPlaylists()
         this.props.getSongs()
         this.props.getReviews()
-        // this.props.userLoggedIn()
     }
     
 
     render() {
+        const {playlists, match, songs, reviews, history, currentUser, loading} = this.props;
 
         const renderPlaylistButton = () => {
-            if(JSON.stringify(this.props.currentUser) !== "{}"){
+            if(JSON.stringify(currentUser) !== "{}"){
                 return  (
-                <Button  onClick={() => this.props.history.push("/playlists/new")}variant="contained">
+                <Button  onClick={() => history.push("/playlists/new")}variant="contained">
                 New Playlist
                 </Button> 
                 )
@@ -36,14 +35,14 @@ export class PlaylistsContainer extends Component {
         return (
             <div>
                 <h2>Playlists</h2>
-                <ListPlaylists playlists={this.props.playlists} loading={this.props.loading} history={this.props.history} /> 
+                <ListPlaylists playlists={playlists} loading={loading} history={history} /> 
                 <br />
                 {renderPlaylistButton()}
             
 
                 <Switch>
                 <Route path="/playlists/new" component={PlaylistForm} />
-                <Route path={`${this.props.match.url}/:playlistId`} render={routerProps => <Playlist {...routerProps} songs={this.props.songs} reviews={this.props.reviews} /> }/>
+                <Route path={`${match.url}/:playlistId`} render={routerProps => <Playlist {...routerProps}  playlists={playlists} songs={songs} reviews={reviews} /> }/>
                 </Switch>
 
             </div>
@@ -62,6 +61,6 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps, { getPlaylists, getSongs, getReviews, userLoggedIn})(PlaylistsContainer)
+export default connect(mapStateToProps, { getPlaylists, getSongs, getReviews})(PlaylistsContainer)
 
 
