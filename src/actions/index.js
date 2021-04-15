@@ -107,6 +107,18 @@ export const getPlaylists = () => {
     }
 }
 
+export const showPlaylist = (playlistId) => {
+    return dispatch => {
+        dispatch({ type: 'LOADING'})
+        fetch("/playlists/playlistId")
+        .then(r => r.json())
+        .then(playlists => { 
+            dispatch({ type: 'NOT_LOADING'})
+            dispatch({type: 'SET_PLAYLIST', playlist})}
+        )   
+    }
+}
+
 export const addPlaylist = (playlist, id, history) => {
     const playlistData = {
         name: playlist.name, 

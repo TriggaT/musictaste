@@ -1,10 +1,11 @@
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
-    playlists: managePlaylist,
+    playlists: managePlaylists,
     songs: manageSongs,
     reviews: manageReviews,
     currentUser: manageUsers,
+    playlist: setPlaylist,
     loading: manageLoad 
 });
   
@@ -22,7 +23,7 @@ function manageLoad(state = true, action){
 
 }
 
-function managePlaylist(state = [], action){
+function managePlaylists(state = [], action){
     switch(action.type){
         case "SET_PLAYLISTS":
             return state = action.playlists
@@ -66,6 +67,15 @@ function manageUsers(state = {}, action){
             return state = action.user 
         case "REMOVE_USER":
             return state = {}
+        default:
+            return state;
+    }
+}
+
+function setPlaylist(state = {}, action){
+    switch(action.type) {
+        case "SET_PLAYLIST":
+            return state = action.playlist 
         default:
             return state;
     }
