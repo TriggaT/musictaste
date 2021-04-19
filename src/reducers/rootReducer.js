@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 import managePlaylists from "./managePlaylists"
+import manageSongs from "./manageSongs"
 
 const rootReducer = combineReducers({
     playlists: managePlaylists,
@@ -25,16 +26,7 @@ function manageLoad(state = true, action){
 
 
 
-function manageSongs(state = [], action){
-    switch(action.type) {
-        case "SET_SONGS":
-            return state = action.songs
-        case "ADD_SONG":
-            return [...state, action.song]
-        default:
-            return state;
-    }
-}
+
 
 function manageReviews(state = [], action){
     switch(action.type) {
