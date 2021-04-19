@@ -10,7 +10,6 @@ import Button from '@material-ui/core/Button';
 
 export class PlaylistsContainer extends Component {
     componentDidMount = () => {
-        this.props.getPlaylists()
         this.props.getSongs()
         this.props.getReviews()
     }
@@ -54,6 +53,6 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps, { getPlaylists, getSongs, getReviews})(PlaylistsContainer)
+export default connect(mapStateToProps, { getSongs, getReviews})(PlaylistsContainer)
 
 
