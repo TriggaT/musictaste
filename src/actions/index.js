@@ -138,6 +138,7 @@ export const getSongs = () => {
         fetch("/songs")
         .then(r => r.json())
         .then(songs => {
+            dispatch({ type: 'NOT_LOADING'})
             dispatch({type: 'SET_SONGS', songs})}
         )
     }
@@ -173,6 +174,7 @@ export const getReviews = () => {
         fetch("/reviews")
         .then(r => r.json())
         .then(reviews => {
+            dispatch({ type: 'NOT_LOADING'})
             dispatch({type: 'GET_REVIEWS', reviews})}
         )
     }
