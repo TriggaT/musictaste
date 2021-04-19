@@ -134,9 +134,11 @@ export const addPlaylist = (playlist, id, history) => {
 
 export const getSongs = () => {
     return dispatch => {
+        dispatch({ type: 'LOADING'})
         fetch("/songs")
         .then(r => r.json())
         .then(songs => {
+            dispatch({ type: 'NOT_LOADING'})
             dispatch({type: 'SET_SONGS', songs})}
         )
     }
@@ -168,9 +170,11 @@ export const addSong = (song, id, history) => {
 
 export const getReviews = () => {
     return dispatch => {
+        dispatch({ type: 'LOADING'})
         fetch("/reviews")
         .then(r => r.json())
         .then(reviews => {
+            dispatch({ type: 'NOT_LOADING'})
             dispatch({type: 'GET_REVIEWS', reviews})}
         )
     }
