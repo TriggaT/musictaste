@@ -44,7 +44,7 @@ export const logInUser = (user, history) => {
         .then(r => r.json())
         .then(data => {
             if (data.failure) {
-                alert(data.failure) 
+                return alert(data.failure) 
             }
             localStorage.setItem("token", data.jwt)
 
