@@ -37,7 +37,7 @@ export class PlaylistsContainer extends Component {
                 {renderPlaylistButton()}
             
                 <Switch>
-                <Route path="/playlists/new" component={PlaylistForm} />
+                <Route exact path="/playlists/new" component={PlaylistForm} />
                 <Route path={`${match.url}/:playlistId`} render={routerProps => <Playlist {...routerProps} /> }/>
                 </Switch>
             </div>
