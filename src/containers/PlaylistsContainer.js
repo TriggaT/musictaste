@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {getPlaylists, getSongs, getReviews} from '../actions/index'
+import { getSongs, getReviews} from '../actions/index'
 import {Switch, Route} from 'react-router-dom';
 import Playlist from "../components/playlists/Playlist"
 import ListPlaylists from "../components/playlists/ListPlaylists"
