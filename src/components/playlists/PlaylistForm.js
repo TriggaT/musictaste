@@ -19,6 +19,7 @@ class PlaylistForm extends Component {
     handleSubmit = e => {
         e.preventDefault()
         this.props.addPlaylist(this.state, this.props.currentUserId, this.props.history)
+
         this.setState({
             name: "",
             description: ""

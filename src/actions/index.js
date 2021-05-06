@@ -1,8 +1,10 @@
+
 export const createUser = (user, history) => {
     const userData = {
         username: user.username, 
         password: user.password
     }
+    
 
     return dispatch => {
         fetch("/users", {
@@ -15,6 +17,7 @@ export const createUser = (user, history) => {
         })
         .then(r => r.json())
         .then(data => {
+            
             localStorage.setItem("token", data.jwt)
             
             let user = {id: data.user.id, username: data.user.username}
@@ -114,6 +117,7 @@ export const addPlaylist = (playlist, id, history) => {
         description: playlist.description,
         user_id: id
     }
+    
     
     return dispatch => {
         fetch("/playlists", {

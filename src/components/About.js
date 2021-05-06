@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Box } from '@material-ui/core'
 
+
 export class About extends Component {
     render() {
         return (
@@ -15,6 +16,7 @@ export class About extends Component {
                     <p> Other tasters will let you know what taste your sound left in their ears! </p>
                     <p> You might even find your <i> music soulmate?!?!</i> </p>
                 </Box> 
+            
                 
             </div>
         )
