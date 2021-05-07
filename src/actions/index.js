@@ -102,7 +102,7 @@ export const userLoggedIn = () => {
 export const getPlaylists = () => {
     return dispatch => {
         dispatch({ type: 'LOADING'})
-        fetch(baseURL + "playlists"
+        fetch(baseURL + "playlists")
         .then(r => r.json())
         .then(playlists => { 
             dispatch({ type: 'NOT_LOADING'})
