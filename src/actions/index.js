@@ -8,7 +8,7 @@ export const createUser = (user, history) => {
     
 
     return dispatch => {
-        fetch(baseURL + "users", {
+        fetch(baseURL + "/users", {
             method: "POST", 
             headers: {
                 "Accept": "application/json",
@@ -37,7 +37,7 @@ export const logInUser = (user, history) => {
     }
 
     return dispatch => {
-        fetch(baseURL + "login", {
+        fetch(baseURL + "/login", {
             method: "POST", 
             headers: {
                 "Accept": "application/json",
@@ -77,7 +77,7 @@ export const userLoggedIn = () => {
     
     if(token){
         return dispatch => {
-            fetch(baseURL + "auto_login", {
+            fetch(baseURL + "/auto_login", {
                 headers:{
                     Authorization: `Bearer ${token}`
                 }
@@ -102,7 +102,7 @@ export const userLoggedIn = () => {
 export const getPlaylists = () => {
     return dispatch => {
         dispatch({ type: 'LOADING'})
-        fetch(baseURL + "playlists")
+        fetch(baseURL + "/playlists")
         .then(r => r.json())
         .then(playlists => { 
             dispatch({ type: 'NOT_LOADING'})
@@ -121,7 +121,7 @@ export const addPlaylist = (playlist, id, history) => {
     
     
     return dispatch => {
-        fetch(baseURL + "playlists", {
+        fetch(baseURL + "/playlists", {
             method: "POST", 
             headers: {
                 "Accept": "application/json",
@@ -140,7 +140,7 @@ export const addPlaylist = (playlist, id, history) => {
 export const getSongs = () => {
     return dispatch => {
         dispatch({ type: 'LOADING'})
-        fetch(baseURL + "songs")
+        fetch(baseURL + "/songs")
         .then(r => r.json())
         .then(songs => {
             dispatch({ type: 'NOT_LOADING'})
@@ -157,7 +157,7 @@ export const addSong = (song, id, history) => {
     }
 
     return dispatch => {
-        fetch(baseURL + "songs", {
+        fetch(baseURL + "/songs", {
             method: "POST", 
             headers: {
                 "Accept": "application/json",
@@ -176,7 +176,7 @@ export const addSong = (song, id, history) => {
 export const getReviews = () => {
     return dispatch => {
         dispatch({ type: 'LOADING'})
-        fetch(baseURL + "reviews")
+        fetch(baseURL + "/reviews")
         .then(r => r.json())
         .then(reviews => {
             dispatch({ type: 'NOT_LOADING'})
@@ -194,7 +194,7 @@ export const addReview = (review, id, currentUserId, history) => {
     }
 
     return dispatch => {
-        fetch(baseURL + "reviews", {
+        fetch(baseURL + "/reviews", {
             method: "POST", 
             headers: {
                 "Accept": "application/json",
