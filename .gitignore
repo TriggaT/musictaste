@@ -49,6 +49,7 @@ typings/
 
 # Optional npm cache directory
 .npm
+.env.development
 
 # Optional eslint cache
 .eslintcache
